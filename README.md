@@ -17,4 +17,12 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## .env involving
+1. Declare a list of string
+```
+LANGUAGES=["English","Vietnamese","Chinese"]
+```
+- String must be wrapped with **DOUBLE_QUOTES ("")**
+- Every element of list **MUST BE WRITTEN IN THE SAME LINE**
+
 
