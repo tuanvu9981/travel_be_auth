@@ -2,33 +2,39 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { HotelService } from './hotel.service';
 import { CreateHotelDto } from './dto/create-hotel.dto';
 import { UpdateHotelDto } from './dto/update-hotel.dto';
+import { ApiTags } from '@nestjs/swagger';
+import { API_TAG } from 'src/common/constant/api.tags';
 
+@ApiTags(API_TAG.HOTELS)
 @Controller('hotel')
 export class HotelController {
-  constructor(private readonly hotelService: HotelService) {}
+  private readonly service: HotelService;
+  constructor(service: HotelService) {
+    this.service = service;
+  }
 
   @Post()
   create(@Body() createHotelDto: CreateHotelDto) {
-    return this.hotelService.create(createHotelDto);
+    return this.service.create(createHotelDto);
   }
 
   @Get()
   findAll() {
-    return this.hotelService.findAll();
+    return this.service.findAll();
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.hotelService.findOne(+id);
+    return this.service.findOne(+id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateHotelDto: UpdateHotelDto) {
-    return this.hotelService.update(+id, updateHotelDto);
+    return this.service.update(+id, updateHotelDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.hotelService.remove(+id);
+    return this.service.remove(+id);
   }
 }
