@@ -11,7 +11,7 @@ export class HotelService {
     this.repo = repo;
   }
 
-  // async create(newViewInfo: ChapterViewInfo): Promise<ChapterDocument> {
+  // async create(newObj: CreateHotelDto): Promise<ChapterDocument> {
   //   const newDocument = new this.model(newViewInfo);
   //   return newDocument.save();
   // }
