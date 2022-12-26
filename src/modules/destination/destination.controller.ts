@@ -2,33 +2,39 @@ import { Controller, Get, Post, Body, Put, Param, Delete } from '@nestjs/common'
 import { DestinationService } from './destination.service';
 import { CreateDestinationDto } from './dto/create-destination.dto';
 import { UpdateDestinationDto } from './dto/update-destination.dto';
+import { ApiTags } from '@nestjs/swagger';
+import { API_TAG } from 'src/common/constant/api.tags';
 
+@ApiTags(API_TAG.DESTINATIONS)
 @Controller('destination')
 export class DestinationController {
-  constructor(private readonly destinationService: DestinationService) {}
+  private readonly service: DestinationService;
+  constructor(service: DestinationService) {
+    this.service = service;
+  }
 
   @Post()
   create(@Body() createDestinationDto: CreateDestinationDto) {
-    return this.destinationService.create(createDestinationDto);
+    return this.service.create(createDestinationDto);
   }
 
   @Get()
   findAll() {
-    return this.destinationService.findAll();
+    return this.service.findAll();
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.destinationService.findOne(+id);
+    return this.service.findOne(+id);
   }
 
   @Put(':id')
   update(@Param('id') id: string, @Body() updateDestinationDto: UpdateDestinationDto) {
-    return this.destinationService.update(+id, updateDestinationDto);
+    return this.service.update(+id, updateDestinationDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.destinationService.remove(+id);
+    return this.service.remove(+id);
   }
 }
