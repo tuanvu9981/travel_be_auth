@@ -19,7 +19,7 @@ export class Destination {
     description: string;
 
     @Prop({ default: [], })
-    activities: Activity[]
+    activities: Activity[];
 }
 
 export const DestinationSchema = SchemaFactory.createForClass(Destination);

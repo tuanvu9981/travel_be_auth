@@ -1,9 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
-import { CreateDestinationDto } from './dto/create-destination.dto';
-import { UpdateDestinationDto } from './dto/update-destination.dto';
+import mongoose, { Model } from 'mongoose';
+import { CreateDestinationDto, UpdateDestinationDto } from './dto/destination.dto';
 import { Destination, DestinationDocument } from './schema/destination.schema';
+
+const DESTINATIONS_PER_PAGE: number = 10;
 
 @Injectable()
 export class DestinationService {
@@ -11,27 +12,31 @@ export class DestinationService {
   constructor(
     @InjectModel(Destination.name)
     repo: Model<DestinationDocument>
-  ){
+  ) {
     this.repo = repo;
   }
-  
-  create(createDestinationDto: CreateDestinationDto) {
-    return 'This action adds a new destination';
+
+  async create(createDto: CreateDestinationDto): Promise<DestinationDocument> {
+    const newDocument = new this.repo(createDto);
+    return newDocument.save();
   }
 
-  findAll() {
-    return `This action returns all destination`;
+  // async findPerPage(pageNumber: number): Promise<DestinationDocument[]> {
+    
+  // }
+
+  async findById(id: string): Promise<DestinationDocument> {
+    const objId = new mongoose.Types.ObjectId(id);
+    return await this.repo.findById(objId).exec();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} destination`;
+  async updateById(id: string, updateDto: UpdateDestinationDto): Promise<DestinationDocument> {
+    const objId = new mongoose.Types.ObjectId(id);
+    return await this.repo.findByIdAndUpdate(objId, updateDto, { new: true });
   }
 
-  update(id: number, updateDestinationDto: UpdateDestinationDto) {
-    return `This action updates a #${id} destination`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} destination`;
+  async deleteById(id: string): Promise<DestinationDocument> {
+    const objId = new mongoose.Types.ObjectId(id);
+    return await this.repo.findByIdAndDelete(objId);
   }
 }
