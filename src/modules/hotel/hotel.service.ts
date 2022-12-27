@@ -1,9 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
-import { CreateHotelDto } from './dto/create-hotel.dto';
-import { UpdateHotelDto } from './dto/update-hotel.dto';
+import mongoose, { Model } from 'mongoose';
+import { CreateHotelDto, UpdateHotelDto } from './dto/hotel.dto';
 import { Hotel, HotelDocument } from './schema/hotel.entity';
+
+const HOTEL_PER_PAGE: number = 10;
 
 @Injectable()
 export class HotelService {
@@ -15,28 +16,27 @@ export class HotelService {
     this.repo = repo;
   }
 
-  // async create(newObj: CreateHotelDto): Promise<ChapterDocument> {
-  //   const newDocument = new this.model(newViewInfo);
-  //   return newDocument.save();
+  async create(createDto: CreateHotelDto): Promise<HotelDocument> {
+    const newDocument = new this.repo(createDto);
+    return newDocument.save();
+  }
+
+  // async findPerPage(pageNumber: number): Promise<HotelDocument[]> {
+
   // }
 
-  create(createHotelDto: CreateHotelDto) {
-    return 'This action adds a new hotel';
+  async findById(id: string): Promise<HotelDocument> {
+    const objId = new mongoose.Types.ObjectId(id);
+    return await this.repo.findById(objId).exec();
   }
 
-  findAll() {
-    return `This action returns all hotel`;
+  async updateById(id: string, updateDto: UpdateHotelDto): Promise<HotelDocument> {
+    const objId = new mongoose.Types.ObjectId(id);
+    return await this.repo.findByIdAndUpdate(objId, updateDto, { new: true });
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} hotel`;
-  }
-
-  update(id: number, updateHotelDto: UpdateHotelDto) {
-    return `This action updates a #${id} hotel`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} hotel`;
+  async deleteById(id: string): Promise<HotelDocument> {
+    const objId = new mongoose.Types.ObjectId(id);
+    return await this.repo.findByIdAndDelete(objId);
   }
 }
