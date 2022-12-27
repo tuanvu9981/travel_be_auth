@@ -1,13 +1,17 @@
 import { Injectable } from '@nestjs/common';
+import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { CreateHotelDto } from './dto/create-hotel.dto';
 import { UpdateHotelDto } from './dto/update-hotel.dto';
-import { HotelDocument } from './schema/hotel.entity';
+import { Hotel, HotelDocument } from './schema/hotel.entity';
 
 @Injectable()
 export class HotelService {
   private readonly repo: Model<HotelDocument>;
-  constructor(repo: Model<HotelDocument>) {
+  constructor(
+    @InjectModel(Hotel.name)
+    repo: Model<HotelDocument>
+  ) {
     this.repo = repo;
   }
 
