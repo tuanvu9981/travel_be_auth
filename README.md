@@ -25,4 +25,13 @@ LANGUAGES=["English","Vietnamese","Chinese"]
 - String must be wrapped with **DOUBLE_QUOTES ("")**
 - Every element of list **MUST BE WRITTEN IN THE SAME LINE**
 
-
+2. Versioning
+- By default, ```app.enableVersioning()``` will set default version with prefix **v**
+```
+app.enableVersioning({
+  defaultVersion: 'abcxyz',
+  type: VersioningType.URI,
+})
+```
+then, the api route called will be ```HOST_NAME:8000/api/vabcxyz/hotel```
+- Reference: [NestJS Versioning](https://docs.nestjs.com/techniques/versioning)

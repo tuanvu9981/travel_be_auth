@@ -4,6 +4,10 @@ import { HotelModule } from './modules/hotel/hotel.module';
 import { ConfigModule } from '@nestjs/config';
 import { getConfig } from './config/config.db';
 import { MongooseModule } from '@nestjs/mongoose';
+import { FoodModule } from './modules/food/food.module';
+import { UserModule } from './modules/user/user.module';
+import { DiscountInfoModule } from './modules/discount-info/discount-info.module';
+import { BookingHistoryModule } from './modules/booking-history/booking-history.module';
 
 @Module({
   imports: [
@@ -14,7 +18,11 @@ import { MongooseModule } from '@nestjs/mongoose';
     }),
     MongooseModule.forRoot(getConfig().URI),
     DestinationModule,
-    HotelModule
+    HotelModule,
+    FoodModule,
+    UserModule,
+    DiscountInfoModule,
+    BookingHistoryModule
   ],
   controllers: [],
   providers: [],
