@@ -9,6 +9,7 @@ import { UserModule } from './modules/user/user.module';
 import { DiscountInfoModule } from './modules/discount-info/discount-info.module';
 import { BookingHistoryModule } from './modules/booking-history/booking-history.module';
 import { AuthModule } from './modules/auth/auth.module';
+import { ActivityModule } from './modules/activity/activity.module';
 
 @Module({
   imports: [
@@ -24,7 +25,8 @@ import { AuthModule } from './modules/auth/auth.module';
     UserModule,
     DiscountInfoModule,
     BookingHistoryModule,
-    AuthModule
+    AuthModule,
+    ActivityModule
   ],
   controllers: [],
   providers: [],

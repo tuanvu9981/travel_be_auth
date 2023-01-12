@@ -1,13 +1,13 @@
-import { Activity } from "../schema/activity.class";
+import { ObjectId } from "mongoose";
 
 export class CreateDestinationDto {
     imageUrl: string;
     city: string;
     country: string;
     description: string;
-    activities: Activity[];
+    activities: ObjectId[];
 }
 
 export class UpdateDestinationDto extends CreateDestinationDto {
-    
+
 }

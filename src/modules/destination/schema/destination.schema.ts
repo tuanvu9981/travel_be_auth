@@ -1,6 +1,5 @@
 import { Schema, Prop, SchemaFactory } from "@nestjs/mongoose";
-import { Document } from "mongoose";
-import { Activity } from "./activity.class";
+import mongoose, { Document, ObjectId } from "mongoose";
 
 export type DestinationDocument = Document & Destination;
 
@@ -18,8 +17,11 @@ export class Destination {
     @Prop()
     description: string;
 
-    @Prop({ default: [], })
-    activities: Activity[];
+    @Prop({
+        default: [],
+        type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Activity' }]
+    })
+    activityIds: ObjectId[];
 }
 
 export const DestinationSchema = SchemaFactory.createForClass(Destination);

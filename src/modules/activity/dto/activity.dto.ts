@@ -1,4 +1,4 @@
-export class Activity {
+export class CreateActivityDto {
     imageUrl: string;
     name: string;
     type: string;
@@ -6,3 +6,5 @@ export class Activity {
     rating: number;
     price: number;
 }
+
+export class UpdateActivityDto { }

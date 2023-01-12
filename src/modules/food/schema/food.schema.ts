@@ -1,5 +1,5 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
-import { Document, ObjectId } from "mongoose";
+import mongoose, { Document, ObjectId } from "mongoose";
 
 export type FoodDocument = Food & Document;
 
@@ -20,7 +20,7 @@ export class Food {
     @Prop({ require: true })
     price: number;
 
-    @Prop({ ref: 'Destination' })
+    @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Destination' })
     destinationId: ObjectId;
 }
 
