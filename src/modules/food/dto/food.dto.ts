@@ -1,3 +1,12 @@
-export class CreateFoodDto {}
+import { ObjectId } from "mongoose";
 
-export class UpdateFoodDto extends CreateFoodDto {}
+export class CreateFoodDto {
+    address: string;
+    foodName: string;
+    imageUrl: string;
+    english?: string;
+    price: number;
+    destinationId?: ObjectId;
+}
+
+export class UpdateFoodDto extends CreateFoodDto { }

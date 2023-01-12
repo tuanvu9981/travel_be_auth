@@ -1,25 +1,37 @@
 import { Injectable } from '@nestjs/common';
+import { InjectModel } from '@nestjs/mongoose';
+import mongoose, { Model } from 'mongoose';
 import { CreateFoodDto, UpdateFoodDto } from './dto/food.dto';
+import { Food, FoodDocument } from './schema/food.schema';
 
 @Injectable()
 export class FoodService {
-  create(createFoodDto: CreateFoodDto) {
-    return 'This action adds a new food';
+  private readonly repo: Model<FoodDocument>;
+
+  constructor(
+    @InjectModel(Food.name)
+    repo: Model<FoodDocument>
+  ) {
+    this.repo = repo;
   }
 
-  findAll() {
-    return `This action returns all food`;
+  async create(dto: CreateFoodDto): Promise<FoodDocument> {
+    const newDocument = new this.repo(dto);
+    return await newDocument.save();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} food`;
+  async findById(id: string): Promise<FoodDocument> {
+    const objId = new mongoose.Types.ObjectId(id);
+    return await this.repo.findById(objId).exec();
   }
 
-  update(id: number, updateFoodDto: UpdateFoodDto) {
-    return `This action updates a #${id} food`;
+  async updateById(id: string, updateDto: UpdateFoodDto): Promise<FoodDocument> {
+    const objId = new mongoose.Types.ObjectId(id);
+    return await this.repo.findByIdAndUpdate(objId, updateDto, { new: true });
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} food`;
+  async deleteById(id: string): Promise<FoodDocument> {
+    const objId = new mongoose.Types.ObjectId(id);
+    return await this.repo.findByIdAndDelete(objId);
   }
 }

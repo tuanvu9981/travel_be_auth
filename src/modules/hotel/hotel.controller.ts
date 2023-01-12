@@ -5,7 +5,7 @@ import { ApiTags } from '@nestjs/swagger';
 import { API_TAG } from 'src/common/constant/api.tags';
 import { HotelDocument } from './schema/hotel.entity';
 
-@ApiTags(API_TAG.HOTELS)
+@ApiTags(API_TAG.HOTEL)
 @Controller('hotel')
 export class HotelController {
   private readonly service: HotelService;
