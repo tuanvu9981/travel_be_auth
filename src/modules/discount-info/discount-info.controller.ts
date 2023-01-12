@@ -1,33 +1,77 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Res, Body, Put, Param, Delete, HttpStatus } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
+import { API_TAG } from 'src/common/constant/api.tags';
 import { DiscountInfoService } from './discount-info.service';
 import { CreateDiscountInfoDto, UpdateDiscountInfoDto } from './dto/discount-info.dto';
+import { DiscountInfoDocument } from './schema/discount-info.schema';
 
+@ApiTags(API_TAG.DISCOUNT_INFO)
 @Controller('discount-info')
 export class DiscountInfoController {
-  constructor(private readonly discountInfoService: DiscountInfoService) {}
-
-  @Post()
-  create(@Body() createDiscountInfoDto: CreateDiscountInfoDto) {
-    return this.discountInfoService.create(createDiscountInfoDto);
+  private readonly service: DiscountInfoService;
+  constructor(service: DiscountInfoService) {
+    this.service = service;
   }
 
-  @Get()
-  findAll() {
-    return this.discountInfoService.findAll();
+  @Post()
+  async create(
+    @Res()
+    response: any,
+
+    @Body()
+    createDto: CreateDiscountInfoDto
+  ): Promise<DiscountInfoDocument> {
+    const document = await this.service.create(createDto);
+    return response.status(HttpStatus.CREATED).json({
+      status: HttpStatus.CREATED,
+      data: document
+    })
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.discountInfoService.findOne(+id);
+  async findById(
+    @Res()
+    response: any,
+
+    @Param('id')
+    id: string
+  ): Promise<DiscountInfoDocument> {
+    const document = await this.service.findById(id);
+    return response.status(HttpStatus.OK).json({
+      status: HttpStatus.OK,
+      data: document
+    })
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateDiscountInfoDto: UpdateDiscountInfoDto) {
-    return this.discountInfoService.update(+id, updateDiscountInfoDto);
+  @Put(':id')
+  async updateById(
+    @Res()
+    response: any,
+
+    @Param('id')
+    id: string,
+
+    @Body()
+    updateDto: UpdateDiscountInfoDto) {
+    const document = await this.service.updateById(id, updateDto);
+    return response.status(HttpStatus.OK).json({
+      status: HttpStatus.OK,
+      data: document
+    })
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.discountInfoService.remove(+id);
+  async deleteById(
+    @Res()
+    response: any,
+
+    @Param('id')
+    id: string
+  ): Promise<DiscountInfoDocument> {
+    const document = await this.service.deleteById(id);
+    return response.status(HttpStatus.OK).json({
+      status: HttpStatus.OK,
+      data: document
+    })
   }
 }
