@@ -18,8 +18,8 @@ export class Hotel {
     @Prop()
     price: number;
 
-    @Prop({ default: [], type: [{ type: Room }] })
-    rooms: Room[]
+    @Prop({ default: [] })
+    rooms: Room[];
 }
 
 export const HotelSchema = SchemaFactory.createForClass(Hotel);
