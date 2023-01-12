@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import mongoose, { Model } from 'mongoose';
 import { CreateHotelDto, UpdateHotelDto } from './dto/hotel.dto';
-import { Hotel, HotelDocument } from './schema/hotel.entity';
+import { Hotel, HotelDocument } from './schema/hotel.schema';
 
 const HOTEL_PER_PAGE: number = 10;
 

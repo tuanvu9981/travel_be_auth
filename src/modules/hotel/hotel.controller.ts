@@ -3,7 +3,7 @@ import { HotelService } from './hotel.service';
 import { CreateHotelDto, UpdateHotelDto } from './dto/hotel.dto';
 import { ApiTags } from '@nestjs/swagger';
 import { API_TAG } from 'src/common/constant/api.tags';
-import { HotelDocument } from './schema/hotel.entity';
+import { HotelDocument } from './schema/hotel.schema';
 
 @ApiTags(API_TAG.HOTEL)
 @Controller('hotel')
