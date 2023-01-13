@@ -10,12 +10,12 @@ export class UserController {
     this.service = service;
   }
 
-  @Post()
-  async create(
-    @Body()
-    createDto: CreateUserDto
-  ): Promise<UserDocument | undefined> {
-    return await this.service.create(createDto);
-  }
+  // @Post()
+  // async create(
+  //   @Body()
+  //   createDto: CreateUserDto
+  // ): Promise<UserDocument | undefined> {
+  //   return await this.service.create(createDto);
+  // }
 
 }
