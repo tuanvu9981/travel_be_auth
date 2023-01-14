@@ -35,3 +35,7 @@ app.enableVersioning({
 ```
 then, the api route called will be ```HOST_NAME:8000/api/vabcxyz/hotel```
 - Reference: [NestJS Versioning](https://docs.nestjs.com/techniques/versioning)
+
+## Authentication
+1. [Viblo Reference](https://viblo.asia/p/xac-thuc-nguoi-dung-trong-nestjs-su-dung-passport-jwt-924lJB7blPM)
+2. [NestJS Official Reference](https://docs.nestjs.com/security/authentication#implementing-passport-local)

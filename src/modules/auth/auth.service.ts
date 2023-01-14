@@ -22,50 +22,26 @@ export class AuthService {
     return await bcrypt.compare(dbPassword, ipPassword);
   }
 
-  // FAKE
-  async validateUser(email: string, password: string): Promise<any> {
-    const user = await this.userService.findOne(email);
-    if (user && user.password === password) {
-      const { password, ...result } = user;
-      // return everything except password
-      return result;
+  async authenticate(email: string, password: string): Promise<any> {
+    const user = await this.userService.findByEmail(email);
+    if (user.responseCode === USER_RESPONSE_CODES.EXISTED) {
+      const check = await this.comparePassword(user.data.password, password);
+      if (check) return user.data._id;
+      else return null;
     }
     return null;
   }
 
-  // FAKE
-  async login(user: any) {
-    const payload = {
+  async signIn(user: any) {
+    const payload: AuthPayload = {
       email: user.email,
-      id: user.userId,
-      avatar: user.avatarUrl
+      fullname: user.fullname,
+      avatarUrl: user.avatarUrl,
+      role: user.role,
+      money: user.money,
     }
 
-    return {
-      access_token: this.jwtService.sign(payload)
-    }
+    return { access_token: this.jwtService.sign(payload) };
   }
-
-  // async authenticate(email: string, password: string): Promise<UserDocument | null> {
-  //   const user = await this.userService.findByEmail(email);
-  //   if (user.responseCode === USER_RESPONSE_CODES.EXISTED) {
-  //     const check = await this.comparePassword(user.data.password, password);
-  //     if (check) return user.data;
-  //     else return null;
-  //   }
-  //   return null;
-  // }
-
-  // async signIn(user: UserDocument) {
-  //   const payload: AuthPayload = {
-  //     email: user.email,
-  //     fullname: user.fullname,
-  //     avatarUrl: user.avatarUrl,
-  //     role: user.role,
-  //     money: user.money,
-  //   }
-
-  //   return { access_token: this.jwtService.sign(payload) };
-  // }
 
 }
