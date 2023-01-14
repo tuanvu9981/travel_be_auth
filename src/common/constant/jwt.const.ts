@@ -2,7 +2,7 @@ import { SetMetadata } from "@nestjs/common";
 
 export const JWT = {
     KEY: "JWT_KEY_TRAVEL_APP",
-    EXPIRE: '6m'
+    EXPIRE: '5m'
 }
 // env
 

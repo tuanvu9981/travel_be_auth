@@ -1,10 +1,13 @@
+// nestjs
 import { Injectable } from '@nestjs/common';
+import { JwtService } from '@nestjs/jwt';
+
+// services and enums
 import { UserService } from '../user/user.service';
 import { USER_RESPONSE_CODES } from 'src/common/enum/enum.user';
+
+// encrypt tool
 import * as bcrypt from 'bcrypt';
-import { UserDocument } from '../user/schema/user.schema';
-import { AuthPayload } from '../user/dto/user.dto';
-import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
 export class AuthService {
@@ -18,27 +21,24 @@ export class AuthService {
     return await bcrypt.hash(password, 10);
   }
 
-  async comparePassword(dbPassword: string, ipPassword: string): Promise<boolean> {
-    return await bcrypt.compare(dbPassword, ipPassword);
+  async comparePassword(ipPassword: string, dbPassword: string): Promise<boolean> {
+    // input password: 1st param | encrypted database password: 2nd param
+    return await bcrypt.compare(ipPassword, dbPassword);
   }
 
   async authenticate(email: string, password: string): Promise<any> {
     const user = await this.userService.findByEmail(email);
     if (user.responseCode === USER_RESPONSE_CODES.EXISTED) {
-      const check = await this.comparePassword(user.data.password, password);
-      if (check) return user.data._id;
-      else return null;
+      const check = await this.comparePassword(password, user.data.password);
+      if (check) return user.data;
+      else return false;
     }
     return null;
   }
 
   async signIn(user: any) {
-    const payload: AuthPayload = {
-      email: user.email,
-      fullname: user.fullname,
-      avatarUrl: user.avatarUrl,
-      role: user.role,
-      money: user.money,
+    const payload = {
+      id: user._id
     }
 
     return { access_token: this.jwtService.sign(payload) };
