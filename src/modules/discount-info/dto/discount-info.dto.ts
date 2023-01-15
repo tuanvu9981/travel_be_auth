@@ -6,6 +6,7 @@ export class CreateDiscountInfoDto {
     title: string;
     instruction: string;
     appliedPlace: string;
+    imageUrl: string;
     contact: Object[];
 }
 

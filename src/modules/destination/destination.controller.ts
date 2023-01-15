@@ -28,21 +28,6 @@ export class DestinationController {
     })
   }
 
-  // @Get(':pageNumber')
-  // async findPerPage(
-  //   @Res()
-  //   response: any,
-
-  //   @Param('pageNumber')
-  //   pageNumber: string
-  // ): Promise<DestinationDocument[]> {
-  //   const documents = await this.service.findPerPage(+pageNumber);
-  //   return response.status(HttpStatus.OK).json({
-  //     status: HttpStatus.OK,
-  //     data: documents
-  //   })
-  // }
-
   @Get(':id')
   async findById(
     @Res()

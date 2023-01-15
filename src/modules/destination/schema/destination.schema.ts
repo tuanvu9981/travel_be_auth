@@ -1,5 +1,7 @@
 import { Schema, Prop, SchemaFactory } from "@nestjs/mongoose";
-import mongoose, { Document, ObjectId } from "mongoose";
+import mongoose, { Document } from "mongoose";
+import { Activity } from "src/modules/activity/schema/activity.schema";
+import { Hotel } from "src/modules/hotel/schema/hotel.schema";
 
 export type DestinationDocument = Document & Destination;
 
@@ -21,13 +23,13 @@ export class Destination {
         default: [],
         type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Activity' }]
     })
-    activityIds: ObjectId[];
+    activities: Activity[];
 
     @Prop({
         default: [],
         type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Hotel' }]
     })
-    hotelIds: ObjectId[];
+    hotels: Hotel[];
 }
 
 export const DestinationSchema = SchemaFactory.createForClass(Destination);

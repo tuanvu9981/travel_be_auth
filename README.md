@@ -40,3 +40,6 @@ then, the api route called will be ```HOST_NAME:8000/api/vabcxyz/hotel```
 1. [Viblo Reference](https://viblo.asia/p/xac-thuc-nguoi-dung-trong-nestjs-su-dung-passport-jwt-924lJB7blPM)
 2. [NestJS Official Reference](https://docs.nestjs.com/security/authentication#implementing-passport-local)
 3. [Extract JWT from header](https://stackoverflow.com/questions/57833669/how-to-get-jwt-token-from-headers-in-controller)
+4. [Custom with Prisma and GraphQL](https://github.com/vladwulf/nestjs-jwts/blob/main/src/prisma/prisma.service.ts)
+5. [Destroy token when logging out](https://stackoverflow.com/questions/37959945/how-to-destroy-jwt-tokens-on-logout)
+6. [Save token ReactJS](https://stackoverflow.com/questions/48983708/where-to-store-access-token-in-react-js)

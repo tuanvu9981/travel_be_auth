@@ -21,10 +21,6 @@ export class DestinationService {
     return newDocument.save();
   }
 
-  // async findPerPage(pageNumber: number): Promise<DestinationDocument[]> {
-    
-  // }
-
   async findById(id: string): Promise<DestinationDocument> {
     const objId = new mongoose.Types.ObjectId(id);
     return await this.repo.findById(objId).exec();

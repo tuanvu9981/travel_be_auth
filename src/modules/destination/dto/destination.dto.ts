@@ -6,6 +6,7 @@ export class CreateDestinationDto {
     country: string;
     description: string;
     activities: ObjectId[];
+    hotels: ObjectId[];
 }
 
 export class UpdateDestinationDto extends CreateDestinationDto {

@@ -14,6 +14,9 @@ export class DiscountInfo {
     @Prop()
     title: string;
 
+    @Prop({ required: true })
+    imageUrl: string;
+
     @Prop()
     instruction: string;
 
