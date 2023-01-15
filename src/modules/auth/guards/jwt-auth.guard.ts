@@ -10,7 +10,9 @@ export class JwtAuthGuard extends AuthGuard('jwt'){}
 // @Injectable()
 // export class JwtAuthGuard extends AuthGuard('jwt') {
 
-//     constructor(private reflector: Reflector){
+//     constructor(
+//         private reflector: Reflector,
+//     ) {
 //         super();
 //     }
 
@@ -23,6 +25,7 @@ export class JwtAuthGuard extends AuthGuard('jwt'){}
 //         if (isPublic){
 //             return true;
 //         }
+
 //         // Add your custom authentication logic here
 //         // for example, call super.logIn(request) to establish a session.
 //         return super.canActivate(context);

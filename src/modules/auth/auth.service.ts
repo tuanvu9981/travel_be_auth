@@ -8,6 +8,7 @@ import { USER_RESPONSE_CODES } from 'src/common/enum/enum.user';
 
 // encrypt tool
 import * as bcrypt from 'bcrypt';
+import mongoose, { ObjectId } from 'mongoose';
 
 @Injectable()
 export class AuthService {
@@ -43,5 +44,11 @@ export class AuthService {
 
     return { access_token: this.jwtService.sign(payload) };
   }
+
+  // async checkWhiteList(token: string, userId: string): Promise<boolean> {
+  //   const user = await this.userService.findById(userId);
+  //   if (user.whiteList.includes(token)) return true;
+  //   return false;
+  // }
 
 }

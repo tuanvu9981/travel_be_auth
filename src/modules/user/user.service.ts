@@ -1,13 +1,13 @@
 // nestjs & mongoose libraries
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import mongoose, { Model } from 'mongoose';
+import mongoose, { Model, ObjectId } from 'mongoose';
 
 // enum
 import { USER_RESPONSE_CODES } from 'src/common/enum/enum.user';
 
 // dto & schema
-import { CreateUserDto, ReturnUserDto, UserResponseDto } from './dto/user.dto';
+import { CreateUserDto, ReturnUserDto, UpdateUserDto, UserResponseDto } from './dto/user.dto';
 import { User, UserDocument } from './schema/user.schema';
 
 @Injectable()
@@ -21,14 +21,9 @@ export class UserService {
     this.repo = repo;
   }
 
-  async create(createDto: CreateUserDto): Promise<ReturnUserDto> {
+  async create(createDto: CreateUserDto): Promise<UserDocument> {
     const newUser = new this.repo(createDto);
-    const newDocument = await newUser.save();
-    return new ReturnUserDto(
-      newUser.email, newUser.fullname,
-      newUser.avatarUrl, newUser.role,
-      newUser.money, newUser._id
-    );
+    return await newUser.save();
   }
 
   async findByEmail(email: string): Promise<UserResponseDto> {
@@ -41,13 +36,18 @@ export class UserService {
     }
   }
 
-  async findById(id: string): Promise<ReturnUserDto> {
+  async findById(id: string): Promise<UserDocument> {
     const objId = new mongoose.Types.ObjectId(id);
-    const user = await this.repo.findById(objId).exec();
+    return await this.repo.findById(objId).exec();
+  }
+
+  async updateById(id: string, newUser: UpdateUserDto): Promise<ReturnUserDto> {
+    const objId = new mongoose.Types.ObjectId(id);
+    const updatedUser = await this.repo.findByIdAndUpdate(objId, newUser, { new: true });
     return new ReturnUserDto(
-      user.email, user.fullname,
-      user.avatarUrl, user.role,
-      user.money, user._id
-    );
+      updatedUser.email, updatedUser.fullname,
+      updatedUser.avatarUrl, updatedUser.role,
+      updatedUser.money, updatedUser._id
+    )
   }
 }

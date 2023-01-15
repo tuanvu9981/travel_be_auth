@@ -23,6 +23,9 @@ export class User {
 
     @Prop({ default: 1000000 })
     money: number;
+
+    // @Prop({ default: [] })
+    // whiteList: string[];
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

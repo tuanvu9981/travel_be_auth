@@ -39,3 +39,4 @@ then, the api route called will be ```HOST_NAME:8000/api/vabcxyz/hotel```
 ## Authentication
 1. [Viblo Reference](https://viblo.asia/p/xac-thuc-nguoi-dung-trong-nestjs-su-dung-passport-jwt-924lJB7blPM)
 2. [NestJS Official Reference](https://docs.nestjs.com/security/authentication#implementing-passport-local)
+3. [Extract JWT from header](https://stackoverflow.com/questions/57833669/how-to-get-jwt-token-from-headers-in-controller)
