@@ -45,7 +45,13 @@ deploy:      # This job runs in the deploy stage.
     # Create the SSH directory and give it the right permissions
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
-    
+
+    ## Use ssh-keyscan to scan the keys of your private server. Replace gitlab.com
+    ## with your own domain name. You can copy and repeat that command if you have more than one server to connect to.
+    - ssh-keyscan $EC2_IPADDRESS >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+
+
   script:
     # - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IPADDRESS "git clone https://gitlab.com/tuanvu9981/travel_be_auth || true"
     - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IPADDRESS "cd travel_be_auth && git pull"
