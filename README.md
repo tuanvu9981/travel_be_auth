@@ -43,3 +43,24 @@ then, the api route called will be ```HOST_NAME:8000/api/vabcxyz/hotel```
 4. [Custom with Prisma and GraphQL](https://github.com/vladwulf/nestjs-jwts/blob/main/src/prisma/prisma.service.ts)
 5. [Destroy token when logging out](https://stackoverflow.com/questions/37959945/how-to-destroy-jwt-tokens-on-logout)
 6. [Save token ReactJS](https://stackoverflow.com/questions/48983708/where-to-store-access-token-in-react-js)
+
+## Github & Gitlab
+1. Remove origin
+```
+$ git remote rm origin
+```
+2. Add remote repo for GitHub
+```
+$ git remote add github https://github.com/<user_name>/<repository_name>.git
+```
+3. Add remote repo for Gitlab
+```
+$ git remote add gitlab https://github.com/<user_name>/<repository_name>.git
+```
+4. Now you have multiple remotes in the project. Double check with git remote -v
+```
+github	https://github.com/tuanvu9981/travel_be_auth (fetch)
+github	https://github.com/tuanvu9981/travel_be_auth (push)
+gitlab	https://gitlab.com/tuanvu9981/travel_be_auth (fetch)
+gitlab	https://gitlab.com/tuanvu9981/travel_be_auth (push)
+```
