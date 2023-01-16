@@ -69,3 +69,6 @@ gitlab	https://gitlab.com/tuanvu9981/travel_be_auth (push)
 $ git push github <branch_name>
 $ git push gitlab <branch_name>
 ```
+
+## CI/CD with Gitlab
+1. [Config SSH & how to use as VARIABLE in config file](https://docs.gitlab.com/ee/ci/ssh_keys/)
