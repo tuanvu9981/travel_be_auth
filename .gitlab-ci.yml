@@ -51,7 +51,7 @@ deploy:      # This job runs in the deploy stage.
     ## with your own domain name. You can copy and repeat that command if you have
     ## more than one server to connect to.
     ##
-    - ssh-keyscan $EC2_IPADDRESS >> ~/.ssh/known_hosts
+    - ssh-keyscan "$EC2_IP_ADDRESS" >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
 
     ##
@@ -65,7 +65,7 @@ deploy:      # This job runs in the deploy stage.
 
   script:
     # - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IPADDRESS "git clone https://gitlab.com/tuanvu9981/travel_be_auth || true"
-    - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IPADDRESS "cd travel_be_auth && git pull"
-    - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IPADDRESS "cd travel_be_auth && npm i"
-    - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IPADDRESS "cd travel_be_auth && (npm run start:dev || true)"
+    - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP_ADDRESS "cd travel_be_auth && git pull"
+    - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP_ADDRESS "cd travel_be_auth && npm i"
+    - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP_ADDRESS "cd travel_be_auth && (npm run start:dev || true)"
     - echo "Application successfully deployed."
