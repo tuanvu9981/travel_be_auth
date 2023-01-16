@@ -33,21 +33,26 @@ deploy:      # This job runs in the deploy stage.
   image: alpine
   before_script:
     
-    ## Install ssh-agent if not already installed, it is required by Docker.
-    ## (change apt-get to yum if you use an RPM-based image)
-    ##
-    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client git -y )'
+    apk add openssh-client
 
     ##
     ## Create the SSH directory and give it the right permissions
     ##
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
-    
+
     ##
     ## Run ssh-agent (inside the build environment)
     ##
     - eval $(ssh-agent -s)
+
+    ##
+    ## Use ssh-keyscan to scan the keys of your private server. Replace gitlab.com
+    ## with your own domain name. You can copy and repeat that command if you have
+    ## more than one server to connect to.
+    ##
+    - ssh-keyscan $EC2_IPADDRESS >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
 
     ##
     ## Add the SSH key stored in SSH_PRIVATE_KEY variable to the agent store
@@ -57,13 +62,6 @@ deploy:      # This job runs in the deploy stage.
     ##
     - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
 
-    ##
-    ## Use ssh-keyscan to scan the keys of your private server. Replace gitlab.com
-    ## with your own domain name. You can copy and repeat that command if you have
-    ## more than one server to connect to.
-    ##
-    - ssh-keyscan $EC2_IPADDRESS >> ~/.ssh/known_hosts
-    - chmod 644 ~/.ssh/known_hosts
 
   script:
     # - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IPADDRESS "git clone https://gitlab.com/tuanvu9981/travel_be_auth || true"
