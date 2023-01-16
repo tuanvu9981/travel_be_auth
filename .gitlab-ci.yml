@@ -28,7 +28,7 @@ stages:          # List of stages for jobs, and their order of execution
 #     - sleep 10
 #     - echo "No lint issues found."
 
-deploy-job:      # This job runs in the deploy stage.
+deploy:      # This job runs in the deploy stage.
   stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
   image: alpine
   before_script:

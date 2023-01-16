@@ -64,3 +64,8 @@ github	https://github.com/tuanvu9981/travel_be_auth (push)
 gitlab	https://gitlab.com/tuanvu9981/travel_be_auth (fetch)
 gitlab	https://gitlab.com/tuanvu9981/travel_be_auth (push)
 ```
+5. Push code to remotes
+```
+$ git push github <branch_name>
+$ git push gitlab <branch_name>
+```
