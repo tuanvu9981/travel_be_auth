@@ -20,9 +20,9 @@ export class FoodService {
     return await newDocument.save();
   }
 
-  async findById(id: string): Promise<FoodDocument> {
+  async findByDestinationId(id: string): Promise<FoodDocument[]> {
     const objId = new mongoose.Types.ObjectId(id);
-    return await this.repo.findById(objId).exec();
+    return await this.repo.find({ destinationId: objId }).exec();
   }
 
   async updateById(id: string, updateDto: UpdateFoodDto): Promise<FoodDocument> {

@@ -21,6 +21,15 @@ export class DiscountInfoService {
     return await newDocument.save();
   }
 
+  async findTop(): Promise<DiscountInfoDocument[]> {
+    const topDocuments = await this.repo.find().exec();
+    return topDocuments.slice(0,5);
+  }
+
+  async findAll(): Promise<DiscountInfoDocument[]> {
+    return await this.repo.find().exec();
+  }
+
   async findById(id: string): Promise<DiscountInfoDocument> {
     const objId = new mongoose.Types.ObjectId(id);
     return await this.repo.findById(objId).exec();

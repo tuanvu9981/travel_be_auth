@@ -29,17 +29,17 @@ export class FoodController {
   }
 
   @Get(':id')
-  async findById(
+  async findByDestinationId(
     @Res()
     response: any,
 
     @Param('id')
     id: string
-  ): Promise<FoodDocument> {
-    const document = await this.service.findById(id);
+  ): Promise<FoodDocument[]> {
+    const documents = await this.service.findByDestinationId(id);
     return response.status(HttpStatus.OK).json({
       status: HttpStatus.OK,
-      data: document
+      data: documents
     })
   }
 

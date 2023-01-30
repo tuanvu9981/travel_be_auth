@@ -21,6 +21,15 @@ export class DestinationService {
     return newDocument.save();
   }
 
+  async findTop(): Promise<DestinationDocument[]> {
+    const topDocuments = await this.repo.find().populate(['activities', 'hotels']).exec();
+    return topDocuments.slice(0,5);
+  }
+
+  async findAll(): Promise<DestinationDocument[]> {
+    return await this.repo.find().populate(['activities', 'hotels']).exec();
+  }
+
   async findById(id: string): Promise<DestinationDocument> {
     const objId = new mongoose.Types.ObjectId(id);
     return await this.repo.findById(objId).exec();

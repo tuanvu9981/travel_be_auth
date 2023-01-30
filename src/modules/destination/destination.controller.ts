@@ -28,6 +28,30 @@ export class DestinationController {
     })
   }
 
+  @Get('/top')
+  async findTopDestinations(
+    @Res()
+    response: any,
+  ): Promise<DestinationDocument[]> {
+    const documents = await this.service.findTop();
+    return response.status(HttpStatus.OK).json({
+      status: HttpStatus.OK,
+      data: documents
+    })
+  }
+
+  @Get('/all')
+  async findAll(
+    @Res()
+    response: any,
+  ): Promise<DestinationDocument[]> {
+    const documents = await this.service.findAll();
+    return response.status(HttpStatus.OK).json({
+      status: HttpStatus.OK,
+      data: documents
+    })
+  }
+
   @Get(':id')
   async findById(
     @Res()
