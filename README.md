@@ -73,3 +73,6 @@ $ git push gitlab <branch_name>
 ## CI/CD with Gitlab
 1. [Config SSH & how to use as VARIABLE in config file](https://docs.gitlab.com/ee/ci/ssh_keys/)
 2. [Fix bug: "Enter passphrase (stdin): "](https://techsparx.com/software-development/gitlab-ci-enter-passphrase.html)
+3. [Fix bug: Cannot connect (publickey)](https://docs.gitlab.com/ee/ci/ssh_keys/?fbclid=IwAR39kBFl0Cma4ha_iioHgjO_p5SDwpFPKUIHEduI0i0FtAdzQee7C7Z6upU)
+  - Using [echo command](https://www.cyberciti.biz/faq/linux-append-text-to-end-of-file/) to add new public key (paired to SSH_PRIVATE_KEY) to authorized_keys in .ssh folder of EC2 instance Ubuntu server
+4. When running, bug named **ADDRESS IN USE** occurred. [Here](https://stackoverflow.com/questions/4075287/node-express-eaddrinuse-address-already-in-use-kill-server) lines the solutions
