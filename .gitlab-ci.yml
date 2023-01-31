@@ -64,8 +64,8 @@ deploy:      # This job runs in the deploy stage.
 
 
   script:
-    - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IPADDRESS "git clone git@gitlab.com:tuanvu9981/travel_be_auth.git || true"
-    - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP_ADDRESS "cd travel_be_auth && git pull"
-    - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP_ADDRESS "cd travel_be_auth && npm i"
-    - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP_ADDRESS "cd travel_be_auth && (npm run start:dev || true)"
+    - ssh -o StrictHostKeyChecking=no ubuntu@$UBUNTU_HOST_NAME "git clone git@gitlab.com:tuanvu9981/travel_be_auth.git || true"
+    - ssh -o StrictHostKeyChecking=no ubuntu@$UBUNTU_HOST_NAME "cd travel_be_auth && git pull"
+    - ssh -o StrictHostKeyChecking=no ubuntu@$UBUNTU_HOST_NAME "cd travel_be_auth && npm i"
+    - ssh -o StrictHostKeyChecking=no ubuntu@$UBUNTU_HOST_NAME "cd travel_be_auth && (npm run start:dev || true)"
     - echo "Application successfully deployed."
