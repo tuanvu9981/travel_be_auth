@@ -73,4 +73,3 @@ $ git push gitlab <branch_name>
 ## CI/CD with Gitlab
 1. [Config SSH & how to use as VARIABLE in config file](https://docs.gitlab.com/ee/ci/ssh_keys/)
 2. [Fix bug: "Enter passphrase (stdin): "](https://techsparx.com/software-development/gitlab-ci-enter-passphrase.html)
-3. **ubuntu@ip-112-41-62-83** instead of **ubuntu@112.41.62.83**
