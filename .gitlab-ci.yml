@@ -33,7 +33,7 @@ deploy:      # This job runs in the deploy stage.
   image: alpine
   before_script:
     
-    - apk add openssh-client git
+    - apk add openssh-client
 
     ##
     ## Create the SSH directory and give it the right permissions
@@ -61,10 +61,6 @@ deploy:      # This job runs in the deploy stage.
     ## https://gitlab.com/gitlab-examples/ssh-private-key/issues/1#note_48526556
     ##
     - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
-
-    ## Add email and user name to use git commands
-    - git config --global user.email "tuanvutruonglacnhatsinh0801@gmail.com"
-    - git config --global user.name "tuanvu9981"
 
   script:
     - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP_ADDRESS "git clone git@gitlab.com:tuanvu9981/travel_be_auth.git || true"
