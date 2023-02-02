@@ -14,7 +14,7 @@ import { ActivityModule } from './modules/activity/activity.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath: `${process.cwd()}/src/env/.${process.env.NODE_ENV}.env`,
+      envFilePath: `${process.cwd()}/env/.${process.env.NODE_ENV}.env`,
       load: [getConfig],
       // list of ConfigObject containing environtment file list
     }),
