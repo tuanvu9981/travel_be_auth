@@ -71,6 +71,7 @@ $ git push gitlab <branch_name>
 ```
 
 ## CI/CD with Gitlab
+0. [setup-gitlab-cicd-reactjs-app-to-aws-ec2](https://viblo.asia/p/setup-gitlab-cicd-reactjs-app-len-aws-ec2-6J3ZgRPqKmB)
 1. [Config SSH & how to use as VARIABLE in config file](https://docs.gitlab.com/ee/ci/ssh_keys/)
 2. [Fix bug: "Enter passphrase (stdin): "](https://techsparx.com/software-development/gitlab-ci-enter-passphrase.html)
 3. [Fix bug: Cannot connect (publickey)](https://docs.gitlab.com/ee/ci/ssh_keys/?fbclid=IwAR39kBFl0Cma4ha_iioHgjO_p5SDwpFPKUIHEduI0i0FtAdzQee7C7Z6upU)
