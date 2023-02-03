@@ -50,8 +50,8 @@ deploy:
     ##
     ## Set StrictHostKeyChecking=no for only specified host & set protected
     ##
-    - echo -e "Host $EC2_IP_ADDRESS \n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
-    - chmod 400 ~/.ssh/config
+    # - echo -e "Host $EC2_IP_ADDRESS \n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    # - chmod 400 ~/.ssh/config
 
     ##
     ## Terminate PID running at port 8000 at the moment (Avoid ADDRESS is in use)
@@ -60,6 +60,9 @@ deploy:
 
   script:
     - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP_ADDRESS "git clone git@gitlab.com:tuanvu9981/travel_be_auth.git || true"
-    - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP_ADDRESS "cd travel_be_auth && git pull origin master"
-    - bash deploy/deploy.sh
+    - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP_ADDRESS "cd travel_be_auth && git pull"
+    - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP_ADDRESS "cd travel_be_auth && npm i"
+    - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP_ADDRESS "cd travel_be_auth && (npm run serve || true)"
+
+    # - bash deploy/deploy.sh
     - echo "Deploying to $EC2_IP_ADDRESS completed! Congratulations!"
