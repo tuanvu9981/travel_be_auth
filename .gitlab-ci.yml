@@ -16,7 +16,6 @@ stages:
 deploy:
   stage: deploy
   image: alpine
-  only: master
   before_script:
     
     - apk add openssh-client
