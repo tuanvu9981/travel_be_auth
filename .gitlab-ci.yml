@@ -56,7 +56,7 @@ deploy:
     ##
     ## Terminate PID running at port 8000 at the moment (Avoid ADDRESS is in use)
     ##
-    - kill $(lsof -t -i:8000)
+    # - kill $(lsof -t -i:8000)
 
   script:
     - bash deploy/deploy.sh
