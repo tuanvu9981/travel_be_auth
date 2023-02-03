@@ -18,7 +18,7 @@ deploy:
   image: alpine
   before_script:
     
-    - apk add openssh-client
+    - apk add openssh-client bash
 
     ##
     ## Create the SSH directory and give it the right permissions
