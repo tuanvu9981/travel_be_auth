@@ -57,7 +57,7 @@ deploy:
     ## Terminate PID running at port 8000 at the moment (Avoid ADDRESS is in use)
     ##
     # - kill $(lsof -t -i:8000)
-    - kill 11670
+    - kill -9 11670
 
   script:
     - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP_ADDRESS "git clone git@gitlab.com:tuanvu9981/travel_be_auth.git || true"
