@@ -50,7 +50,7 @@ deploy:
     ##
     ## Set StrictHostKeyChecking=no for only specified host & set protected
     ##
-    - echo -e "Host $EC2_IP_ADDRESS \n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+    - echo -e "Host $EC2_IP_ADDRESS \n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
     - chmod 400 ~/.ssh/config
 
   script:
