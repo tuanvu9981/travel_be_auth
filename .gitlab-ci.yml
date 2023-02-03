@@ -59,5 +59,6 @@ deploy:
     # - kill $(lsof -t -i:8000)
 
   script:
+    - ssh -o ubuntu@$EC2_IP_ADDRESS "cd travel_be_auth && git pull"
     - bash deploy/deploy.sh
     - echo "Deploying to $EC2_IP_ADDRESS completed! Congratulations!"
