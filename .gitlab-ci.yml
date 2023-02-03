@@ -53,6 +53,11 @@ deploy:
     - echo -e "Host $EC2_IP_ADDRESS \n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
     - chmod 400 ~/.ssh/config
 
+    ##
+    ## Terminate PID running at port 8000 at the moment (Avoid ADDRESS is in use)
+    ##
+    - kill $(lsof -t -i:8000)
+
   script:
     - bash deploy/deploy.sh
     - echo "Deploying to $EC2_IP_ADDRESS completed! Congratulations!"
