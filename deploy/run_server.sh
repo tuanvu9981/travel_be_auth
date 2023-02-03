@@ -5,4 +5,4 @@ git pull origin master
 # Build and deploy
 npm install
 npm run build
-node dist/main.js
+npm run start:prod:deploy
