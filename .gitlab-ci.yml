@@ -61,7 +61,7 @@ deploy:
     - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP_ADDRESS "cd travel_be_auth && npx kill-port 8000"
 
     - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP_ADDRESS "cd travel_be_auth && npm i"
-    - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP_ADDRESS "cd travel_be_auth && npm run serve &&"
+    - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP_ADDRESS "cd travel_be_auth && npm run serve &"
 
     # - bash deploy/deploy.sh
     - echo "Deploying to $EC2_IP_ADDRESS completed! Congratulations!"
