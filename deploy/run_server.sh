@@ -6,4 +6,7 @@ git pull origin master
 # Build and deploy
 npm install
 npm run build
-npm run serve > nestjs_server_running.log
+echo "Build: done"
+timeout 25s npm run serve > nestjs_server_running.log || FAILED=true
+grep -e 'listening on \*:8000' nestjs_server_running.log  
+if [ "$FAILED" == "true" ]; then exit 0; fi
