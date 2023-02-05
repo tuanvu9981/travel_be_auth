@@ -56,10 +56,7 @@ deploy:
   script:
     # - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP_ADDRESS "git clone git@gitlab.com:tuanvu9981/travel_be_auth.git || true"
     # - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP_ADDRESS "cd travel_be_auth && git pull"
-
-    # # Terminate PID running at port 8000 at the moment (Avoid ADDRESS is in use)
     # - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP_ADDRESS "cd travel_be_auth && npx kill-port 8000"
-
     # - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP_ADDRESS "cd travel_be_auth && npm i"
     # - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP_ADDRESS "cd travel_be_auth && npm run serve && echo \"Deploying completed! \""
 
