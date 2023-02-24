@@ -1,13 +1,12 @@
 import { Date, ObjectId } from "mongoose";
 
 export class History {
-    place: {
-        hotelId?: ObjectId;
-        hotelName: string;
-        room: string;
-    };
+    hotelImgUrl: string;
+    hotelName: string;
+    hotelAddress: string;
+    roomId: string;
+    roomLevel: string;
     bookingDate: Date;
-    deposit: number;
     checkInDate: Date;
-    checkoutDate: Date;
+    checkOutDate: Date;
 }
