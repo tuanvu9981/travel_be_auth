@@ -1,6 +1,6 @@
 import { Schema, SchemaFactory, Prop } from "@nestjs/mongoose";
 import { Document } from "mongoose";
-import { Room } from "./room.entity";
+import { Floor } from "./room.entity";
 
 export type HotelDocument = Hotel & Document;
 
@@ -19,7 +19,7 @@ export class Hotel {
     price: number;
 
     @Prop({ default: [] })
-    rooms: Room[];
+    floors: Floor[];
 }
 
 export const HotelSchema = SchemaFactory.createForClass(Hotel);
