@@ -1,11 +1,11 @@
-import { Room } from "../schema/room.entity";
+import { Floor, Room } from "../schema/room.entity";
 
 export class CreateHotelDto {
     imageUrl: string;
     name: string;
     address: string;   
     price: number;
-    rooms: Room[];
+    floors: Floor[];
 }
 
 export class UpdateHotelDto extends CreateHotelDto { }

@@ -6,6 +6,7 @@ export const EXPENSE = {
 export enum ROOM_STATUS {
     VACANT = "vacant", // phòng còn trống,
     BOOKED = "booked", // phòng đã được đặt,
+    STAYED = "stayed"
 }
 
 export enum ROOM_LEVEL {
