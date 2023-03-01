@@ -11,16 +11,16 @@ export class DiscountInfo {
     @Prop({ required: true, type: Date })
     endDate: Date;
 
-    @Prop()
+    @Prop({ required: true })
     title: string;
 
     @Prop({ required: true })
     imageUrl: string;
 
-    @Prop()
+    @Prop({ default: '' })
     instruction: string;
 
-    @Prop()
+    @Prop({ default: '' })
     appliedPlace: string;
 
     @Prop({
