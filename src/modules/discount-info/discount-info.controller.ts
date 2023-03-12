@@ -1,6 +1,7 @@
-import { Controller, Get, Post, Res, Body, Put, Param, Delete, HttpStatus } from '@nestjs/common';
+import { Controller, Get, Post, Res, Body, Put, Param, Delete, HttpStatus, UseGuards } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { API_TAG } from 'src/common/constant/api.tags';
+import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { DiscountInfoService } from './discount-info.service';
 import { CreateDiscountInfoDto, UpdateDiscountInfoDto } from './dto/discount-info.dto';
 import { DiscountInfoDocument } from './schema/discount-info.schema';
@@ -13,21 +14,22 @@ export class DiscountInfoController {
     this.service = service;
   }
 
-  @Post()
-  async create(
-    @Res()
-    response: any,
+  // @Post()
+  // async create(
+  //   @Res()
+  //   response: any,
 
-    @Body()
-    createDto: CreateDiscountInfoDto
-  ): Promise<DiscountInfoDocument> {
-    const document = await this.service.create(createDto);
-    return response.status(HttpStatus.CREATED).json({
-      status: HttpStatus.CREATED,
-      data: document
-    })
-  }
+  //   @Body()
+  //   createDto: CreateDiscountInfoDto
+  // ): Promise<DiscountInfoDocument> {
+  //   const document = await this.service.create(createDto);
+  //   return response.status(HttpStatus.CREATED).json({
+  //     status: HttpStatus.CREATED,
+  //     data: document
+  //   })
+  // }
 
+  @UseGuards(JwtAuthGuard)
   @Get('/top')
   async findTopDestinations(
     @Res()
@@ -40,6 +42,7 @@ export class DiscountInfoController {
     })
   }
 
+  @UseGuards(JwtAuthGuard)
   @Get('/all')
   async findAll(
     @Res()
@@ -52,6 +55,7 @@ export class DiscountInfoController {
     })
   }
 
+  @UseGuards(JwtAuthGuard)
   @Get(':id')
   async findById(
     @Res()
@@ -67,35 +71,35 @@ export class DiscountInfoController {
     })
   }
 
-  @Put(':id')
-  async updateById(
-    @Res()
-    response: any,
+  // @Put(':id')
+  // async updateById(
+  //   @Res()
+  //   response: any,
 
-    @Param('id')
-    id: string,
+  //   @Param('id')
+  //   id: string,
 
-    @Body()
-    updateDto: UpdateDiscountInfoDto) {
-    const document = await this.service.updateById(id, updateDto);
-    return response.status(HttpStatus.OK).json({
-      status: HttpStatus.OK,
-      data: document
-    })
-  }
+  //   @Body()
+  //   updateDto: UpdateDiscountInfoDto) {
+  //   const document = await this.service.updateById(id, updateDto);
+  //   return response.status(HttpStatus.OK).json({
+  //     status: HttpStatus.OK,
+  //     data: document
+  //   })
+  // }
 
-  @Delete(':id')
-  async deleteById(
-    @Res()
-    response: any,
+  // @Delete(':id')
+  // async deleteById(
+  //   @Res()
+  //   response: any,
 
-    @Param('id')
-    id: string
-  ): Promise<DiscountInfoDocument> {
-    const document = await this.service.deleteById(id);
-    return response.status(HttpStatus.OK).json({
-      status: HttpStatus.OK,
-      data: document
-    })
-  }
+  //   @Param('id')
+  //   id: string
+  // ): Promise<DiscountInfoDocument> {
+  //   const document = await this.service.deleteById(id);
+  //   return response.status(HttpStatus.OK).json({
+  //     status: HttpStatus.OK,
+  //     data: document
+  //   })
+  // }
 }

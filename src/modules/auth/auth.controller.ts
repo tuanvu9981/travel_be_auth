@@ -26,6 +26,8 @@ export class AuthController {
     @Body() dto: CreateUserDto,
     @Res() response: any,
   ) {
+    console.log(dto.email);
+    console.log(dto.password);
     const check = await this.userService.findByEmail(dto.email);
     if (check.responseCode === USER_RESPONSE_CODES.EXISTED) {
       return response.status(HttpStatus.BAD_REQUEST).json({
