@@ -1,10 +1,17 @@
 import { SetMetadata } from "@nestjs/common";
 
-export const JWT = {
-    KEY: "JWT_KEY_TRAVEL_APP",
-    EXPIRE: '5m'
+export const ACCESS_TOKEN_JWT = {
+    KEY: "ACCESS_TOKEN_TRAVEL_APP",
+    EXPIRE: '15m'
+}
+
+export const REFRESH_TOKEN_JWT = {
+    KEY: "REFRESH_TOKEN_TRAVEL_APP",
+    EXPIRE: '2d'
 }
 // env
 
-// export const IS_PUBLIC = 'public_route';
-// export const Public = () => SetMetadata(IS_PUBLIC, true);
+export type TokenType = {
+    accessToken: string;
+    refreshToken: string;
+}

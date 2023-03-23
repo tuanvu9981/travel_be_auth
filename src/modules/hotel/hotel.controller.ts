@@ -4,7 +4,6 @@ import { CreateHotelDto, UpdateHotelDto } from './dto/hotel.dto';
 import { ApiTags } from '@nestjs/swagger';
 import { API_TAG } from 'src/common/constant/api.tags';
 import { HotelDocument } from './schema/hotel.schema';
-import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 
 @ApiTags(API_TAG.HOTEL)
 @Controller('hotel')
@@ -29,7 +28,6 @@ export class HotelController {
   //   })
   // }
 
-  @UseGuards(JwtAuthGuard)
   @Get(':id')
   async findById(
     @Res()
@@ -45,7 +43,6 @@ export class HotelController {
     })
   }
 
-  @UseGuards(JwtAuthGuard)
   @Put(':id')
   async updateById(
     @Res()

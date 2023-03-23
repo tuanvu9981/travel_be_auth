@@ -1,7 +1,6 @@
 import { Controller, Get, Post, Res, Body, Put, Param, Delete, HttpStatus, UseGuards } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { API_TAG } from 'src/common/constant/api.tags';
-import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { DiscountInfoService } from './discount-info.service';
 import { CreateDiscountInfoDto, UpdateDiscountInfoDto } from './dto/discount-info.dto';
 import { DiscountInfoDocument } from './schema/discount-info.schema';
@@ -29,7 +28,6 @@ export class DiscountInfoController {
   //   })
   // }
 
-  @UseGuards(JwtAuthGuard)
   @Get('/top')
   async findTopDestinations(
     @Res()
@@ -42,7 +40,6 @@ export class DiscountInfoController {
     })
   }
 
-  @UseGuards(JwtAuthGuard)
   @Get('/all')
   async findAll(
     @Res()
@@ -55,7 +52,6 @@ export class DiscountInfoController {
     })
   }
 
-  @UseGuards(JwtAuthGuard)
   @Get(':id')
   async findById(
     @Res()

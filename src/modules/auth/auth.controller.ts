@@ -1,18 +1,18 @@
 // nestjs 
-import { Controller, Post, Body, Res, HttpStatus, Request, Get, UseGuards, Put } from '@nestjs/common';
+import { Controller, Post, Body, Res, HttpStatus, Request, Get, UseGuards, Put, Req, BadRequestException } from '@nestjs/common';
 
 // dto & enum
-import { USER_RESPONSE_CODES } from 'src/common/enum/enum.user';
-import { ERR_RESPONSE_CODE } from 'src/common/error/error.code';
-import { CreateUserDto, ReturnUserDto } from '../user/dto/user.dto';
+import { TokenType } from 'src/common/constant/jwt.const';
+import { CreateUserDto, RegenerateDto } from '../user/dto/user.dto';
 
 // service
 import { UserService } from '../user/user.service';
 import { AuthService } from './auth.service';
 
 // guard
-import { JwtAuthGuard } from './guards/jwt-auth.guard';
+import { AccessTokenGuard } from './guards/access-token.guard';
 import { LocalAuthGuard } from './guards/local.guard';
+import { RefreshTokenGuard } from './guards/refresh-token.guard';
 
 @Controller('auth')
 export class AuthController {
@@ -26,33 +26,8 @@ export class AuthController {
     @Body() dto: CreateUserDto,
     @Res() response: any,
   ) {
-    console.log(dto.email);
-    console.log(dto.password);
-    const check = await this.userService.findByEmail(dto.email);
-    if (check.responseCode === USER_RESPONSE_CODES.EXISTED) {
-      return response.status(HttpStatus.BAD_REQUEST).json({
-        statusCode: HttpStatus.BAD_REQUEST,
-        message: ERR_RESPONSE_CODE.EMAIL_EXISTED,
-      });
-    }
-
-    // no duplication --> hash password & save db
-    dto.password = await this.authService.hashPassword(dto.password);
-    const newUser = await this.userService.create(dto);
-    const newToken = await this.authService.signIn({ _id: newUser.id });
-
-    // add newToken to white list
-    // newUser.whiteList.push(newToken.access_token);
-    // await this.userService.updateById(newUser._id, newUser);
-
-    return response.status(HttpStatus.CREATED).json({
-      statusCode: HttpStatus.CREATED,
-      data: new ReturnUserDto(
-        newUser.email, newUser.fullname, newUser.avatarUrl,
-        newUser.role, newUser.money, newUser._id
-      ),
-      access_token: newToken.access_token
-    });
+    const tokens = await this.authService.signUp(dto);
+    return response.status(HttpStatus.CREATED).json({ ...tokens });
   }
 
   @UseGuards(LocalAuthGuard)
@@ -61,14 +36,11 @@ export class AuthController {
     @Request() request: any,
     @Res() response: any,
   ) {
-    const token = await this.authService.signIn(request.user);
-    return response.status(HttpStatus.OK).json({
-      statusCode: HttpStatus.OK,
-      access_token: token.access_token
-    });
+    const tokens = await this.authService.signIn(request.user);
+    return response.status(HttpStatus.OK).json({ ...tokens });
   }
 
-  @UseGuards(JwtAuthGuard)
+  @UseGuards(AccessTokenGuard)
   @Get('/profile')
   async getProfile(
     @Request() request: any,
@@ -76,73 +48,86 @@ export class AuthController {
   ) {
     const { id } = request.user;
     const user = await this.userService.findById(id);
-    return response.status(HttpStatus.OK).json({
-      statusCode: HttpStatus.OK,
-      data: user,
-    });
+    const convertedUser = this.userService.convertDocumentToProfile(user);
+    return response.status(HttpStatus.OK).json({ user: convertedUser });
   }
 
-  @UseGuards(JwtAuthGuard)
-  @Put('update-email')
-  async updateEmail(
+  @UseGuards(AccessTokenGuard)
+  @Post('/log-out')
+  async logOut(
     @Request() request: any,
-    @Res() response: any
   ) {
     const { id } = request.user;
-    const newEmail = request.body.email;
-
-    const check = await this.userService.findByEmail(newEmail);
-    if (check.responseCode === USER_RESPONSE_CODES.EXISTED) {
-      return response.status(HttpStatus.BAD_REQUEST).json({
-        statusCode: HttpStatus.BAD_REQUEST,
-        message: ERR_RESPONSE_CODE.EMAIL_EXISTED,
-      });
-    }
-    const newUser = await this.userService.updateById(id, request.body);
-    return response.status(HttpStatus.OK).json({
-      statusCode: HttpStatus.OK,
-      data: newUser,
-    });
+    return this.authService.logout(id);
   }
 
-  @UseGuards(JwtAuthGuard)
+  @UseGuards(RefreshTokenGuard)
+  @Post('/regenerate-tokens')
+  async regenerateTokensWhenExpired(
+    @Res() response: any,
+    @Request() request: any
+  ) {
+    const { id, refreshToken } = request.user;
+    const tokens = await this.authService.regenerateTokensWhenExpired(id, refreshToken);
+    return response.status(HttpStatus.OK).json({ ...tokens });
+  }
+
+  // @UseGuards(AccessTokenGuard)
+  // @Put('update-email')
+  // async updateEmail(
+  //   @Request() request: any,
+  //   @Res() response: any
+  // ) {
+  //   const { id } = request.user;
+  //   const newEmail = request.body.email;
+
+  //   const check = await this.userService.findByEmail(newEmail);
+  //   if (check.responseCode === USER_RESPONSE_CODES.EXISTED) {
+  //     return response.status(HttpStatus.BAD_REQUEST).json({
+  //       statusCode: HttpStatus.BAD_REQUEST,
+  //       message: ERR_RESPONSE_CODE.EMAIL_EXISTED,
+  //     });
+  //   }
+  //   const newUser = await this.userService.updateById(id, request.body);
+  //   return response.status(HttpStatus.OK).json({
+  //     statusCode: HttpStatus.OK,
+  //     data: newUser,
+  //   });
+  // }
+
+  @UseGuards(AccessTokenGuard)
   @Put('update-password')
   async updatePassword(
     @Request() request: any,
     @Res() response: any
   ) {
     const { id } = request.user;
-    const { newPassword, oldPassword, ...userData } = request.body;
+    const { newPassword, oldPassword } = request.body;
 
     let user = await this.userService.findById(id);
-    const compareResult = await this.authService.comparePassword(oldPassword, user.password);
+    const compareResult = await this.authService.compare2HashedStrings(oldPassword, user.password);
     if (!compareResult) {
-      return response.status(HttpStatus.BAD_REQUEST).json({
-        statusCode: HttpStatus.BAD_REQUEST,
-        message: ERR_RESPONSE_CODE.OLD_PW_INCORRECT
-      });
+      throw new BadRequestException("Password Incorrect !");
     }
 
     const newHashPassword = await this.authService.hashPassword(newPassword);
-    user = { ...userData, password: newHashPassword };
+    user.password = newHashPassword;
     const newUser = await this.userService.updateById(id, user);
-    return response.status(HttpStatus.OK).json({
-      statusCode: HttpStatus.OK,
-      data: newUser,
-    });
+    const convertedUser = this.userService.convertDocumentToProfile(newUser);
+    return response.status(HttpStatus.OK).json({ user: convertedUser });
   }
 
-  @UseGuards(JwtAuthGuard)
-  @Put('general')
-  async updateGeneral(
-    @Request() request: any,
-    @Res() response: any
-  ) {
-    const { id } = request.user;
-    const newUser = await this.userService.updateById(id, request.body);
-    return response.status(HttpStatus.OK).json({
-      statusCode: HttpStatus.OK,
-      data: newUser,
-    });
-  }
+  // @UseGuards(AccessTokenGuard)
+  // @Put('general')
+  // async updateGeneral(
+  //   @Request() request: any,
+  //   @Res() response: any
+  // ) {
+  //   const { id } = request.user;
+  //   const newUser = await this.userService.updateById(id, request.body);
+  //   return response.status(HttpStatus.OK).json({
+  //     statusCode: HttpStatus.OK,
+  //     data: newUser,
+  //   });
+  // }
 }

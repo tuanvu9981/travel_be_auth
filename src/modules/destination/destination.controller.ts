@@ -4,7 +4,6 @@ import { CreateDestinationDto, UpdateDestinationDto } from './dto/destination.dt
 import { ApiTags } from '@nestjs/swagger';
 import { API_TAG } from 'src/common/constant/api.tags';
 import { DestinationDocument } from './schema/destination.schema';
-import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 
 @ApiTags(API_TAG.DESTINATION)
 @Controller('destination')
@@ -29,7 +28,6 @@ export class DestinationController {
   //   })
   // }
 
-  @UseGuards(JwtAuthGuard)
   @Get('/top')
   async findTopDestinations(
     @Res()
@@ -42,7 +40,6 @@ export class DestinationController {
     })
   }
 
-  @UseGuards(JwtAuthGuard)
   @Get('/all')
   async findAll(
     @Res()
@@ -55,7 +52,6 @@ export class DestinationController {
     })
   }
 
-  @UseGuards(JwtAuthGuard)
   @Get(':id')
   async findById(
     @Res()

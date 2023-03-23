@@ -4,6 +4,8 @@ import { USER_ROLE } from "src/common/enum/enum.user";
 
 export type UserDocument = User & Document;
 
+const defaultAvatarUrl = 'https://firebasestorage.googleapis.com/v0/b/fir-getx-flutter-bd7d8.appspot.com/o/default_user.jpg?alt=media&token=b24066c2-0b5b-480a-9a54-fd307d1078f1';
+
 @Schema({ versionKey: false })
 export class User {
     @Prop({ required: true })
@@ -15,7 +17,7 @@ export class User {
     @Prop({ required: true })
     fullname: string;
 
-    @Prop({ default: '' })
+    @Prop({ default: defaultAvatarUrl })
     avatarUrl: string
 
     @Prop({ default: USER_ROLE.CUSTOMER, enum: USER_ROLE })
@@ -24,8 +26,8 @@ export class User {
     @Prop({ default: 1000000 })
     money: number;
 
-    // @Prop({ default: [] })
-    // whiteList: string[];
+    @Prop()
+    refreshToken: string;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

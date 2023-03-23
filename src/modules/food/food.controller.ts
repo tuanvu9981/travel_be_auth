@@ -4,7 +4,6 @@ import { CreateFoodDto, UpdateFoodDto } from './dto/food.dto';
 import { ApiTags } from '@nestjs/swagger';
 import { API_TAG } from 'src/common/constant/api.tags';
 import { FoodDocument } from './schema/food.schema';
-import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 
 @ApiTags(API_TAG.FOOD)
 @Controller('food')
@@ -29,7 +28,6 @@ export class FoodController {
   //   })
   // }
 
-  @UseGuards(JwtAuthGuard)
   @Get(':id')
   async findByDestinationId(
     @Res()
