@@ -4,6 +4,7 @@ import { CreateFoodDto, UpdateFoodDto } from './dto/food.dto';
 import { ApiTags } from '@nestjs/swagger';
 import { API_TAG } from 'src/common/constant/api.tags';
 import { FoodDocument } from './schema/food.schema';
+import { AccessTokenGuard } from '../auth/guards/access-token.guard';
 
 @ApiTags(API_TAG.FOOD)
 @Controller('food')
@@ -28,6 +29,7 @@ export class FoodController {
   //   })
   // }
 
+  @UseGuards(AccessTokenGuard)
   @Get(':id')
   async findByDestinationId(
     @Res()
@@ -37,10 +39,7 @@ export class FoodController {
     id: string
   ): Promise<FoodDocument[]> {
     const documents = await this.service.findByDestinationId(id);
-    return response.status(HttpStatus.OK).json({
-      status: HttpStatus.OK,
-      data: documents
-    })
+    return response.status(HttpStatus.OK).json({ data: documents });
   }
 
   // @Put(':id')

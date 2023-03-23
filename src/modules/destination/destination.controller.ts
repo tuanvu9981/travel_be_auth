@@ -4,6 +4,7 @@ import { CreateDestinationDto, UpdateDestinationDto } from './dto/destination.dt
 import { ApiTags } from '@nestjs/swagger';
 import { API_TAG } from 'src/common/constant/api.tags';
 import { DestinationDocument } from './schema/destination.schema';
+import { AccessTokenGuard } from '../auth/guards/access-token.guard';
 
 @ApiTags(API_TAG.DESTINATION)
 @Controller('destination')
@@ -28,30 +29,27 @@ export class DestinationController {
   //   })
   // }
 
+  @UseGuards(AccessTokenGuard)
   @Get('/top')
   async findTopDestinations(
     @Res()
     response: any,
   ): Promise<DestinationDocument[]> {
     const documents = await this.service.findTop();
-    return response.status(HttpStatus.OK).json({
-      status: HttpStatus.OK,
-      data: documents
-    })
+    return response.status(HttpStatus.OK).json({ data: documents })
   }
 
+  @UseGuards(AccessTokenGuard)
   @Get('/all')
   async findAll(
     @Res()
     response: any,
   ): Promise<DestinationDocument[]> {
     const documents = await this.service.findAll();
-    return response.status(HttpStatus.OK).json({
-      status: HttpStatus.OK,
-      data: documents
-    })
+    return response.status(HttpStatus.OK).json({ data: documents })
   }
 
+  @UseGuards(AccessTokenGuard)
   @Get(':id')
   async findById(
     @Res()
@@ -61,10 +59,7 @@ export class DestinationController {
     id: string
   ): Promise<DestinationDocument> {
     const document = await this.service.findById(id);
-    return response.status(HttpStatus.OK).json({
-      status: HttpStatus.OK,
-      data: document
-    })
+    return response.status(HttpStatus.OK).json({ data: document })
   }
 
   // @Put(':id')

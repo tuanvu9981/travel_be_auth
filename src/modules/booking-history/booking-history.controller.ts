@@ -1,6 +1,7 @@
-import { Controller, Get, Post, Body, Put, HttpStatus, Res, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Put, HttpStatus, Res, Param, Delete, UseGuards } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { API_TAG } from 'src/common/constant/api.tags';
+import { AccessTokenGuard } from '../auth/guards/access-token.guard';
 import { BookingHistoryService } from './booking-history.service';
 import { CreateBookingHistoryDto, UpdateBookingHistoryDto } from './dto/booking-history.dto';
 import { BookingHistoryDocument } from './schema/booking-history.schema';
@@ -13,6 +14,7 @@ export class BookingHistoryController {
     this.service = service;
   }
 
+  @UseGuards(AccessTokenGuard)
   @Post()
   async create(
     @Res()
@@ -28,8 +30,9 @@ export class BookingHistoryController {
     })
   }
 
-  @Get(':id')
-  async findById(
+  @UseGuards(AccessTokenGuard)
+  @Get()
+  async findByUserId(
     @Res()
     response: any,
 
@@ -43,23 +46,25 @@ export class BookingHistoryController {
     })
   }
 
-  @Put(':id')
-  async updateById(
-    @Res()
-    response: any,
+  // @UseGuards(AccessTokenGuard)
+  // @Put(':id')
+  // async updateById(
+  //   @Res()
+  //   response: any,
 
-    @Param('id')
-    id: string,
+  //   @Param('id')
+  //   id: string,
 
-    @Body()
-    updateDto: UpdateBookingHistoryDto) {
-    const document = await this.service.updateById(id, updateDto);
-    return response.status(HttpStatus.OK).json({
-      status: HttpStatus.OK,
-      data: document
-    })
-  }
-
+  //   @Body()
+  //   updateDto: UpdateBookingHistoryDto) {
+  //   const document = await this.service.updateById(id, updateDto);
+  //   return response.status(HttpStatus.OK).json({
+  //     status: HttpStatus.OK,
+  //     data: document
+  //   })
+  // }
+  
+  @UseGuards(AccessTokenGuard)
   @Delete(':id')
   async deleteById(
     @Res()
