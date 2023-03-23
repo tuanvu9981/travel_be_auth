@@ -72,28 +72,28 @@ export class AuthController {
     return response.status(HttpStatus.OK).json({ ...tokens });
   }
 
-  // @UseGuards(AccessTokenGuard)
-  // @Put('update-email')
-  // async updateEmail(
-  //   @Request() request: any,
-  //   @Res() response: any
-  // ) {
-  //   const { id } = request.user;
-  //   const newEmail = request.body.email;
-
-  //   const check = await this.userService.findByEmail(newEmail);
-  //   if (check.responseCode === USER_RESPONSE_CODES.EXISTED) {
-  //     return response.status(HttpStatus.BAD_REQUEST).json({
-  //       statusCode: HttpStatus.BAD_REQUEST,
-  //       message: ERR_RESPONSE_CODE.EMAIL_EXISTED,
-  //     });
-  //   }
-  //   const newUser = await this.userService.updateById(id, request.body);
-  //   return response.status(HttpStatus.OK).json({
-  //     statusCode: HttpStatus.OK,
-  //     data: newUser,
-  //   });
-  // }
+  @UseGuards(AccessTokenGuard)
+  @Put('update-email')
+  async updateEmail(
+    @Request() request: any,
+    @Res() response: any
+  ) {
+    const { id } = request.user;
+    const { oldEmail, newEmail } = request.body;
+  
+    let user = await this.userService.findByEmail(newEmail);
+    if (user.data != null) {
+      throw new BadRequestException("Your new email already existed!");
+    }
+    user = await this.userService.findByEmail(oldEmail);
+    if (user.data == null){
+      throw new BadRequestException("Your old email is wrong, update canceled!");
+    }
+    user.data.email = newEmail;
+    const newUser = await this.userService.updateById(id, user.data);
+    const convertedUser = this.userService.convertDocumentToProfile(newUser);
+    return response.status(HttpStatus.OK).json({ data: convertedUser });
+  }
 
   @UseGuards(AccessTokenGuard)
   @Put('update-password')
@@ -118,7 +118,7 @@ export class AuthController {
   }
 
   // @UseGuards(AccessTokenGuard)
-  // @Put('general')
+  // @Put('update-general')
   // async updateGeneral(
   //   @Request() request: any,
   //   @Res() response: any
