@@ -5,5 +5,3 @@ export class CreateBookingHistoryDto {
     userId: ObjectId;
     histories: History[];
 }
-
-export class UpdateBookingHistoryDto extends CreateBookingHistoryDto {}
