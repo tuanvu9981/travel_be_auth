@@ -32,11 +32,11 @@ export class BookingHistoryService {
     return await this.repo.findOne({ userId }).exec();
   }
 
-  async updateById(id: string, updateDto: History): Promise<BookingHistoryDocument> {
-    const objId = new mongoose.Types.ObjectId(id);
-    const document = await this.repo.findById(objId);
+  async updateByUserId(id: string, updateDto: History): Promise<BookingHistoryDocument> {
+    const userId = new mongoose.Types.ObjectId(id);
+    const document = await this.repo.findOne({ userId }).exec();
     document.histories.push(updateDto);
-    return await this.repo.findByIdAndUpdate(objId, document, { new: true });
+    return await this.repo.findByIdAndUpdate(document._id, document, { new: true });
   }
 
   async deleteById(id: string): Promise<BookingHistoryDocument> {

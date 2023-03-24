@@ -44,18 +44,19 @@ export class BookingHistoryController {
   }
 
   @UseGuards(AccessTokenGuard)
-  @Put(':id')
-  async updateByBookingHistoryId(
+  @Put()
+  async updateByUserId(
     @Res()
     response: any,
 
-    @Param('id')
-    id: string,
+    @Req()
+    request: any,
 
     @Body()
     updateDto: History
   ) {
-    const document = await this.service.updateById(id, updateDto);
+    const { id } = request.user;
+    const document = await this.service.updateByUserId(id, updateDto);
     return response.status(HttpStatus.OK).json({ data: document })
   }
 
