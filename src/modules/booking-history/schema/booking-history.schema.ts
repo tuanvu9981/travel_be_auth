@@ -7,8 +7,8 @@ export type BookingHistoryDocument = BookingHistory & Document;
 
 @Schema({ versionKey: false })
 export class BookingHistory {
-    @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'User' })
-    userId: ObjectId;
+    @Prop({ type: mongoose.Types.ObjectId, ref: 'User' })
+    userId: mongoose.Types.ObjectId;
 
     @Prop({ default: [] })
     histories: History[];

@@ -22,13 +22,14 @@ export class BookingHistoryService {
     return newDocument.save();
   }
 
-  // async findPerPage(pageNumber: number): Promise<BookingHistoryDocument[]> {
-
-  // }
-
   async findById(id: string): Promise<BookingHistoryDocument> {
     const objId = new mongoose.Types.ObjectId(id);
     return await this.repo.findById(objId).exec();
+  }
+
+  async findByUserId(userId: string): Promise<BookingHistoryDocument> {
+    const objId = new mongoose.Types.ObjectId(userId);
+    return await this.repo.findOne({ userId }).exec();
   }
 
   async updateById(id: string, updateDto: History): Promise<BookingHistoryDocument> {

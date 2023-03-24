@@ -4,6 +4,7 @@ import { API_TAG } from 'src/common/constant/api.tags';
 import { AccessTokenGuard } from '../auth/guards/access-token.guard';
 import { BookingHistoryService } from './booking-history.service';
 import { History } from './schema/history.entity';
+import mongoose from 'mongoose';
 
 @ApiTags(API_TAG.BOOKING_HISTORY)
 @Controller('booking-history')
@@ -15,7 +16,7 @@ export class BookingHistoryController {
 
   @UseGuards(AccessTokenGuard)
   @Post()
-  async create(
+  async createUserBookingHistory(
     @Res()
     response: any,
 
@@ -23,7 +24,8 @@ export class BookingHistoryController {
     request: any
   ) {
     const { id } = request.user;
-    const document = await this.service.create({ userId: id, histories: [] });
+    const objId = new mongoose.Types.ObjectId(id);
+    const document = await this.service.create({ userId: objId, histories: [] });
     return response.status(HttpStatus.CREATED).json({ data: document })
   }
 
@@ -37,13 +39,13 @@ export class BookingHistoryController {
     request: any,
   ) {
     const { id } = request.user;
-    const document = await this.service.findById(id);
+    const document = await this.service.findByUserId(id);
     return response.status(HttpStatus.OK).json({ data: document })
   }
 
   @UseGuards(AccessTokenGuard)
   @Put(':id')
-  async updateById(
+  async updateByBookingHistoryId(
     @Res()
     response: any,
 
