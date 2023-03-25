@@ -34,4 +34,6 @@ export class ProfileDto {
     role: USER_ROLE;
     avatarUrl: string;
     money: number;
+    phoneNumber: string;
+    birthday: string;
 }

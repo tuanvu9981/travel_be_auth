@@ -26,6 +26,12 @@ export class User {
     @Prop({ default: 1000000 })
     money: number;
 
+    @Prop({ default: 'phone number not added yet' })
+    phoneNumber: string;
+
+    @Prop({default: 'birthday not added yet'})
+    birthday: string;
+
     @Prop()
     refreshToken: string;
 }

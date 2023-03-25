@@ -45,7 +45,9 @@ export class UserService {
       fullname: document.fullname,
       role: document.role,
       money: document.money,
-      avatarUrl: document.avatarUrl
+      avatarUrl: document.avatarUrl,
+      phoneNumber: document.phoneNumber,
+      birthday: document.birthday
     }
     return profile;
   }
