@@ -36,4 +36,5 @@ export class ProfileDto {
     money: number;
     phoneNumber: string;
     birthday: string;
+    systemLanguage: string;
 }

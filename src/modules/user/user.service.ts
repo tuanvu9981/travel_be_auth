@@ -47,7 +47,8 @@ export class UserService {
       money: document.money,
       avatarUrl: document.avatarUrl,
       phoneNumber: document.phoneNumber,
-      birthday: document.birthday
+      birthday: document.birthday,
+      systemLanguage: document.systemLanguage,
     }
     return profile;
   }
