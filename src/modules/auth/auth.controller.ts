@@ -117,17 +117,17 @@ export class AuthController {
     return response.status(HttpStatus.OK).json({ user: convertedUser });
   }
 
-  // @UseGuards(AccessTokenGuard)
-  // @Put('update-general')
-  // async updateGeneral(
-  //   @Request() request: any,
-  //   @Res() response: any
-  // ) {
-  //   const { id } = request.user;
-  //   const newUser = await this.userService.updateById(id, request.body);
-  //   return response.status(HttpStatus.OK).json({
-  //     statusCode: HttpStatus.OK,
-  //     data: newUser,
-  //   });
-  // }
+  @UseGuards(AccessTokenGuard)
+  @Put('update-general')
+  async updateGeneral(
+    @Request() request: any,
+    @Res() response: any
+  ) {
+    const { id } = request.user;
+    const newUser = await this.userService.updateById(id, request.body);
+    return response.status(HttpStatus.OK).json({
+      statusCode: HttpStatus.OK,
+      data: newUser,
+    });
+  }
 }

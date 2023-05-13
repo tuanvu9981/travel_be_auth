@@ -1,6 +1,6 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import { Document } from "mongoose";
-import { USER_ROLE } from "src/common/enum/enum.user";
+import { SYSTEM_LANGUAGE, USER_ROLE } from "src/common/enum/enum.user";
 
 export type UserDocument = User & Document;
 
@@ -29,11 +29,14 @@ export class User {
     @Prop({ default: 'phone number not added yet' })
     phoneNumber: string;
 
-    @Prop({default: 'birthday not added yet'})
+    @Prop({ default: 'birthday not added yet' })
     birthday: string;
 
     @Prop()
     refreshToken: string;
+
+    @Prop({ enum: SYSTEM_LANGUAGE, default: SYSTEM_LANGUAGE.ENGLISH })
+    systemLanguage: SYSTEM_LANGUAGE;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
