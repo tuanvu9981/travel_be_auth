@@ -130,4 +130,12 @@ export class AuthController {
       data: newUser,
     });
   }
+
+  @UseGuards(AccessTokenGuard)
+  @Put('update-avatar')
+  async updateAvatar(
+
+  ){
+    
+  }
 }
