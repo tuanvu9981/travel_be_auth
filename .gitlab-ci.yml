@@ -16,6 +16,8 @@ stages:
 deploy:
   stage: deploy
   image: alpine
+  variables:
+    ENV_FILE: "ENV_DATA"
   before_script:
     
     - apk add openssh-client bash
@@ -60,6 +62,5 @@ deploy:
     # - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP_ADDRESS "cd travel_be_auth && npm i"
     # - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP_ADDRESS "cd travel_be_auth && npm run serve && echo \"Deploying completed! \""
 
-    # Get sensitive data from ENV_DATA in CICD storage, copy to .env file in repo.
     - bash deploy/deploy.sh
     - echo "Deploying completed! Congratulations!"
