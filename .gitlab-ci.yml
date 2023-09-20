@@ -19,17 +19,20 @@ deploy:
   before_script:
     
     - apk add openssh-client bash
+    - pwd
 
     ##
     ## Create the SSH directory and give it the right permissions
     ##
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
+    - pwd
 
     ##
     ## Run ssh-agent (inside the build environment)
     ##
     - eval $(ssh-agent -s)
+    - pwd
 
     ##
     ## Use ssh-keyscan to scan the keys of your private server. Replace gitlab.com
@@ -38,6 +41,7 @@ deploy:
     ##
     - ssh-keyscan "$EC2_IP_ADDRESS" >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
+    - pwd
 
     ##
     ## Add the SSH key stored in SSH_PRIVATE_KEY variable to the agent store
@@ -46,6 +50,7 @@ deploy:
     ## https://gitlab.com/gitlab-examples/ssh-private-key/issues/1#note_48526556
     ##
     - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - pwd
 
     ##
     ## Set StrictHostKeyChecking=no for only specified host & set protected
@@ -61,7 +66,5 @@ deploy:
     # - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP_ADDRESS "cd travel_be_auth && npm run serve && echo \"Deploying completed! \""
 
     # Get sensitive data from ENV_DATA in CICD storage, copy to .env file in repo.
-    - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP_ADDRESS "cd travel_be_auth && rm -f .env && cat $ENV_DATA >> .env"
-
     - bash deploy/deploy.sh
     - echo "Deploying completed! Congratulations!"
