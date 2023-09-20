@@ -52,13 +52,16 @@ deploy:
     ##
     # - echo -e "Host $EC2_IP_ADDRESS \n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
     # - chmod 400 ~/.ssh/config
-    
+
   script:
     # - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP_ADDRESS "git clone git@gitlab.com:tuanvu9981/travel_be_auth.git || true"
     # - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP_ADDRESS "cd travel_be_auth && git pull"
     # - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP_ADDRESS "cd travel_be_auth && npx kill-port 8000"
     # - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP_ADDRESS "cd travel_be_auth && npm i"
     # - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP_ADDRESS "cd travel_be_auth && npm run serve && echo \"Deploying completed! \""
+
+    # Get sensitive data from ENV_DATA in CICD storage, copy to .env file in repo.
+    - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP_ADDRESS "cd travel_be_auth && rm -f .env && cat $ENV_DATA >> .env"
 
     - bash deploy/deploy.sh
     - echo "Deploying completed! Congratulations!"
