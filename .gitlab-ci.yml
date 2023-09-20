@@ -61,4 +61,10 @@ deploy:
     # - ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP_ADDRESS "cd travel_be_auth && npm run serve && echo \"Deploying completed! \""
 
     - bash deploy/deploy.sh
+
+    # Get sensitive data from ENV_DATA in CICD storage, copy to .env file in repo.
+    - pwd
+    - rm -f .env
+    - cat $ENV_DATA >> .env
+    
     - echo "Deploying completed! Congratulations!"
