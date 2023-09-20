@@ -46,26 +46,35 @@ then, the api route called will be ```HOST_NAME:8000/api/vabcxyz/hotel```
 6. [Save token ReactJS in which local storage](https://stackoverflow.com/questions/48983708/where-to-store-access-token-in-react-js)
 
 ### Github & Gitlab
-1. Remove origin
+1. List all existing origin
+```
+$ git remote -v
+```
+
+2. Remove origin
 ```
 $ git remote rm origin
 ```
-2. Add remote repo for GitHub
+
+3. Add remote repo for GitHub
 ```
 $ git remote add github https://github.com/<user_name>/<repository_name>.git
 ```
-3. Add remote repo for Gitlab
+
+4. Add remote repo for Gitlab
 ```
 $ git remote add gitlab https://github.com/<user_name>/<repository_name>.git
 ```
-4. Now you have multiple remotes in the project. Double check with git remote -v
+
+5. Now you have multiple remotes in the project. Double check with git remote -v
 ```
 github	https://github.com/tuanvu9981/travel_be_auth (fetch)
 github	https://github.com/tuanvu9981/travel_be_auth (push)
 gitlab	https://gitlab.com/tuanvu9981/travel_be_auth (fetch)
 gitlab	https://gitlab.com/tuanvu9981/travel_be_auth (push)
 ```
-5. Push code to remotes
+
+6. Push code to remotes
 ```
 $ git push github <branch_name>
 $ git push gitlab <branch_name>
@@ -96,6 +105,14 @@ $ git push gitlab <branch_name>
   ```
   ubuntu@$EC2_IP_ADDRESS:~/travel_be_auth: git remote set-url origin https://[username]:[access_token_or_password]@gitlab.com/[path_to_your_repo.git]
   ```
+
+* Note: When [access_token_or_password] expired, your process involving git will also be blocked or denied by Gitlab. You need to create another access token and reset remote.
+
+* Note: In bash file, if you write: 
+```
+git pull gitlab-origin master
+```
+then when set git remote, you'll also have to name it **gitlab-origin** too. If not, Gitlab will inform you: "Remote name not found"
 
 8. The bash command, which stops logging of nestjs application
   - Hint: [Follow StackOverflow instruction](https://stackoverflow.com/questions/51438086/make-nodejs-script-run-in-background-in-gitlab-ci)

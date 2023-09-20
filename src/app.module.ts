@@ -14,7 +14,7 @@ import { ActivityModule } from './modules/activity/activity.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath: `${process.cwd()}/}.env`,
+      // envFilePath: By default, nestjs will find .env file in root directory
       load: [getConfig],
       // list of ConfigObject containing environtment file list
     }),
