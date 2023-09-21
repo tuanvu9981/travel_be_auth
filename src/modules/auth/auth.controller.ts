@@ -1,5 +1,5 @@
 // nestjs 
-import { Controller, Post, Body, Res, HttpStatus, Request, Get, UseGuards, Put, Req, BadRequestException } from '@nestjs/common';
+import { Controller, Post, Body, Res, HttpStatus, Request, Get, UseGuards, Put, Req, BadRequestException, UseInterceptors, UploadedFile } from '@nestjs/common';
 
 // dto & enum
 import { TokenType } from 'src/common/constant/jwt.const';
@@ -13,12 +13,16 @@ import { AuthService } from './auth.service';
 import { AccessTokenGuard } from './guards/access-token.guard';
 import { LocalAuthGuard } from './guards/local.guard';
 import { RefreshTokenGuard } from './guards/refresh-token.guard';
+import { FileInterceptor } from '@nestjs/platform-express';
+import { Media } from '../media/media.schema';
+import { BaseStorageService } from '../media/interface/file-storage';
 
 @Controller('auth')
 export class AuthController {
   constructor(
     private authService: AuthService,
-    private userService: UserService
+    private userService: UserService,
+    private mediaService: BaseStorageService,
   ) { }
 
   @Post('/sign-up')
@@ -80,13 +84,13 @@ export class AuthController {
   ) {
     const { id } = request.user;
     const { oldEmail, newEmail } = request.body;
-  
+
     let user = await this.userService.findByEmail(newEmail);
     if (user.data != null) {
       throw new BadRequestException("Your new email already existed!");
     }
     user = await this.userService.findByEmail(oldEmail);
-    if (user.data == null){
+    if (user.data == null) {
       throw new BadRequestException("Your old email is wrong, update canceled!");
     }
     user.data.email = newEmail;
@@ -132,10 +136,17 @@ export class AuthController {
   }
 
   @UseGuards(AccessTokenGuard)
+  @UseInterceptors(FileInterceptor('file'))
   @Put('update-avatar')
   async updateAvatar(
-
-  ){
-    
+    @Request() request: any,
+    @UploadedFile() file: Express.Multer.File,
+  ): Promise<Media> {
+    const { id } = request.user;
+    const media = await this.mediaService.uploadFile(file);
+    const user = await this.userService.findById(id);
+    user.avatarUrl = media.key;
+    await this.userService.updateById(id, user);
+    return media;
   }
 }

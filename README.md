@@ -136,3 +136,7 @@ then when set git remote, you'll also have to name it **gitlab-origin** too. If 
 
 ### About AWS
 1. **[Calculate money and service fee AWS](https://viblo.asia/p/cach-tinh-chi-phi-dich-vu-aws-maGK70BBZj2#_cac-lua-chon-thay-the-aws-3)**
+
+2. **[IAM role to grant permissions to applications running on Amazon EC2](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html?icmpid=docs_iam_console)**
+
+3. If S3 region is **Asia Pacific (Tokyo) ap-northeast-1**, you need to declare **AWS_REGION=ap-northeast-1**
