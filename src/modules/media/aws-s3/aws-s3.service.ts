@@ -72,7 +72,8 @@ export class S3Service extends BaseStorageService {
             Key: key,
             Body: fileBuffer,
             ContentType: contentType,
-            // ACL: 'public-read' // private file --> remove this
+            // ACL: 'public-read' 
+            // private file --> remove this
         }
 
         return new Promise((resolve, reject) => {

@@ -8,7 +8,8 @@ export class MediaController {
 
     @Put('update-acl')
     async updateACL(@Body('mediaId') mediaId: string) {
-        return await this.service.updateACL(mediaId);
+        const mediaUrl = await this.service.updateACL(mediaId);
+        return { mediaUrl: mediaUrl };
     }
 
     @Delete('delete-file')

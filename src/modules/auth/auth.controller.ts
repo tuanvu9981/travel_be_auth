@@ -145,7 +145,8 @@ export class AuthController {
     const { id } = request.user;
     const media = await this.mediaService.uploadFile(file);
     const user = await this.userService.findById(id);
-    user.avatarUrl = media.key;
+    const mediaUrl = await this.mediaService.updateACL(media._id);
+    user.avatarUrl = mediaUrl;
     await this.userService.updateById(id, user);
     return media;
   }
