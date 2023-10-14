@@ -1,0 +1,26 @@
+logs
+# Versioning and metadata
+.git
+.gitignore
+.dockerignore
+
+# Build dependencies
+dist
+node_modules
+coverage
+
+# Environment (contains sensitive data)
+.env
+dev.env
+docs
+setup
+
+# Files not required for production
+.editorconfig
+.eslintrc.js
+.prettierrc
+generate.sh
+Dockerfile
+README.md
+tslint.json
+nodemon.json
