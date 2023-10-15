@@ -1,0 +1,17 @@
+version: '3.3'
+
+services:
+  travel-be:
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+    env_file: ./.env
+    restart: on-failure
+    networks:
+      - travel_network
+    ports:
+      - 127.0.0.1:${PORT}:${PORT}
+
+networks:
+  travel_network:
+    driver: bridge
