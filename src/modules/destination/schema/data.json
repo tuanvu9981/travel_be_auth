@@ -1,0 +1,121 @@
+[
+    {
+        "city": {
+            "en": "Da Nang",
+            "vi": "Đà Nẵng "
+        },
+        "country": {
+            "en": "Vietnam",
+            "vi": "Việt Nam"
+        },
+        "description": {
+            "en": "The most worth-living city in Vietnam",
+            "vi": "thành phố đáng sống nhất Việt Nam"
+        },
+        "imageUrl": "gs://travel-app-f9548.appspot.com/DaNang/da-nang.jpg",
+        "activities": [],
+        "hotels": []
+    },
+    {
+        "city": {
+            "en": "Hue",
+            "vi": "Huế "
+        },
+        "country": {
+            "en": "Vietnam",
+            "vi": "Việt Nam"
+        },
+        "description": {
+            "en": "An ancient city where used to be the capital of Vietnam",
+            "vi": "Một thành phố cổ nơi từng là thủ đô của Việt Nam"
+        },
+        "imageUrl": "gs://travel-app-f9548.appspot.com/Hue/hue.jpeg",
+        "activities": [],
+        "hotels": []
+    },
+    {
+        "city": {
+            "en": "Kyoto",
+            "vi": "Kyoto"
+        },
+        "country": {
+            "en": "Japan",
+            "vi": "Nhật Bản"
+        },
+        "description": {
+            "en": "A beautiful city with many picturesque tourist attraction",
+            "vi": "Một thành phố xinh đẹp với nhiều địa điểm du lịch đẹp như tranh vẽ"
+        },
+        "imageUrl": "gs://travel-app-f9548.appspot.com/Kyoto/kyoto.jpg",
+        "activities": [],
+        "hotels": []
+    },
+    {
+        "city": {
+            "en": "NewYork",
+            "vi": "NewYork"
+        },
+        "country": {
+            "en": "United States",
+            "vi": "Hoa Kỳ"
+        },
+        "description": {
+            "en": "The modern and developed city with convenient infrastructures",
+            "vi": "Thành phố hiện đại và phát triển với cơ sở hạ tầng thuận tiện"
+        },
+        "imageUrl": "gs://travel-app-f9548.appspot.com/NewYork/newyork.jpg",
+        "activities": [],
+        "hotels": []
+    },
+    {
+        "city": {
+            "en": "Paris",
+            "vi": "Paris"
+        },
+        "country": {
+            "en": "France",
+            "vi": "Pháp"
+        },
+        "description": {
+            "en": "The romantic city inside Europe",
+            "vi": "Thành phố lãng mạn trong lòng châu Âu"
+        },
+        "imageUrl": "gs://travel-app-f9548.appspot.com/Paris/paris.jpg",
+        "activities": [],
+        "hotels": []
+    },
+    {
+        "city": {
+            "en": "Sapa",
+            "vi": "Sapa"
+        },
+        "country": {
+            "en": "Vietnam",
+            "vi": "Việt Nam"
+        },
+        "description": {
+            "en": "The peaceful and beautiful town located in northern Vietnam",
+            "vi": "Thị trấn yên bình và xinh đẹp nằm ở miền Bắc Việt Nam"
+        },
+        "imageUrl": "gs://travel-app-f9548.appspot.com/Sapa/sapa.jpg",
+        "activities": [],
+        "hotels": []
+    },
+    {
+        "city": {
+            "en": "Venice",
+            "vi": "Venice"
+        },
+        "country": {
+            "en": "Italy",
+            "vi": "Italia"
+        },
+        "description": {
+            "en": "The ancient city with many Roman architecture",
+            "vi": "Thành phố cổ với nhiều kiến ​​trúc La Mã"
+        },
+        "imageUrl": "gs://travel-app-f9548.appspot.com/Venice/venice.jpg",
+        "activities": [],
+        "hotels": []
+    }
+]

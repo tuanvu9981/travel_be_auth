@@ -1,0 +1,172 @@
+[
+    {
+        "startDate": "2024-01-15",
+        "endDate": "2024-02-20",
+        "imageUrl": "gs://travel-app-f9548.appspot.com/discount/discount1.jpeg",
+        "title": {
+            "en": "Big discount for Tet holiday",
+            "vi": "Giảm giá lớn dịp Tết"
+        },
+        "instruction": {
+            "en": "Using discount QR code displayed in your mobile/computer screens after transferring money to pay for your trips.",
+            "vi": "Sử dụng mã QR giảm giá hiển thị trên màn hình điện thoại/máy tính sau khi chuyển tiền thanh toán cho chuyến đi."
+        },
+        "appliedPlace": {
+            "en": "European trips",
+            "vi": "Chuyến đi châu Âu"
+        },
+        "contact": [
+            {
+                "email": "+84 076 671 1638",
+                "phone": "cuan123@gmail.com"
+            },
+            {
+                "email": "+84 076 671 1638",
+                "phone": "cuan456@gmail.com"
+            }
+        ]
+    },
+    {
+        "startDate": "2024-01-15",
+        "endDate": "2024-12-20",
+        "imageUrl": "gs://travel-app-f9548.appspot.com/discount/discount2.jpg",
+        "title": {
+            "en": "Big sale for Japan trips",
+            "vi": "Khuyến mãi lớn cho chuyến đi Nhật Bản"
+        },
+        "instruction": {
+            "en": "Using discount code written inside the email we sent you to confirm your booking.",
+            "vi": "Sử dụng mã giảm giá được ghi bên trong email chúng tôi đã gửi cho bạn để xác nhận đặt phòng."
+        },
+        "appliedPlace": {
+            "en": "Japan trips",
+            "vi": "Chuyến đi Nhật Bản"
+        },
+        "contact": [
+            {
+                "email": "+84 076 671 1638",
+                "phone": "cuan123@gmail.com"
+            },
+            {
+                "email": "+84 076 671 1638",
+                "phone": "cuan456@gmail.com"
+            }
+        ]
+    },
+    {
+        "startDate": "2024-02-15",
+        "endDate": "2024-07-20",
+        "imageUrl": "gs://travel-app-f9548.appspot.com/discount/discount3.jpg",
+        "title": {
+            "en": "Special discount for China trips",
+            "vi": "Giảm giá đặc biệt cho chuyến đi Trung Quốc"
+        },
+        "instruction": {
+            "en": "Using discount QR code displayed in your mobile/computer screens after transferring money to pay for your trips.",
+            "vi": "Sử dụng mã QR giảm giá hiển thị trên màn hình điện thoại/máy tính sau khi chuyển tiền thanh toán cho chuyến đi."
+        },
+        "appliedPlace": {
+            "en": "China trips",
+            "vi": "Chuyến đi Trung Quốc"
+        },
+        "contact": [
+            {
+                "email": "+84 076 671 1638",
+                "phone": "cuan123@gmail.com"
+            },
+            {
+                "email": "+84 076 671 1638",
+                "phone": "cuan456@gmail.com"
+            }
+        ]
+    },
+    {
+        "startDate": "2024-01-15",
+        "endDate": "2024-02-20",
+        "imageUrl": "gs://travel-app-f9548.appspot.com/discount/discount4.jpg",
+        "title": {
+            "en": "Big sale to welcome 15th birthday anniversary of our company",
+            "vi": "Big sale chào mừng sinh nhật 15 năm thành lập công ty"
+        },
+        "instruction": {
+            "en": "Using discount code written inside the email we sent you to confirm your booking.",
+            "vi": "Sử dụng mã giảm giá được ghi bên trong email chúng tôi đã gửi cho bạn để xác nhận đặt phòng."
+        },
+        "appliedPlace": {
+            "en": "Vietnam domestic trips",
+            "vi": "Du lịch nội địa Việt Nam"
+        },
+        "contact": [
+            {
+                "email": "+84 076 671 1638",
+                "phone": "cuan123@gmail.com"
+            },
+            {
+                "email": "+84 076 671 1638",
+                "phone": "cuan456@gmail.com"
+            },
+            {
+                "email": "+84 078 675 1638",
+                "phone": "cuan789@gmail.com"
+            }
+        ]
+    },
+    {
+        "startDate": "2024-01-15",
+        "endDate": "2024-02-20",
+        "imageUrl": "gs://travel-app-f9548.appspot.com/discount/new-year.png",
+        "title": {
+            "en": "Big sale for new year 2024",
+            "vi": "Khuyến mãi lớn cho năm mới 2024"
+        },
+        "instruction": {
+            "en": "Using discount QR code displayed in your mobile/computer screens after transferring money to pay for your trips.",
+            "vi": "Sử dụng mã QR giảm giá hiển thị trên màn hình điện thoại/máy tính sau khi chuyển tiền thanh toán cho chuyến đi."
+        },
+        "appliedPlace": {
+            "en": "North America trips",
+            "vi": "Chuyến đi Bắc Mỹ"
+        },
+        "contact": [
+            {
+                "email": "+84 076 671 1638",
+                "phone": "cuan123@gmail.com"
+            },
+            {
+                "email": "+84 076 671 1638",
+                "phone": "cuan456@gmail.com"
+            }
+        ]
+    },
+    {
+        "startDate": "2024-01-15",
+        "endDate": "2024-02-20",
+        "imageUrl": "gs://travel-app-f9548.appspot.com/discount/travel-after-lockdown.jpg",
+        "title": {
+            "en": "Travel after Covid-19 lockdown",
+            "vi": "Du lịch sau thời kỳ phong tỏa hậu covid"
+        },
+        "instruction": {
+            "en": "Using discount code written inside the email we sent you to confirm your booking.",
+            "vi": "Sử dụng mã giảm giá được ghi bên trong email chúng tôi đã gửi cho bạn để xác nhận đặt phòng."
+        },
+        "appliedPlace": {
+            "en": "Vietnam domestic trips",
+            "vi": "Du lịch nội địa Việt Nam"
+        },
+        "contact": [
+            {
+                "email": "+84 076 671 1638",
+                "phone": "cuan123@gmail.com"
+            },
+            {
+                "email": "+84 076 671 1638",
+                "phone": "cuan456@gmail.com"
+            },
+            {
+                "email": "+84 078 675 1638",
+                "phone": "cuan789@gmail.com"
+            }
+        ]
+    }
+]
