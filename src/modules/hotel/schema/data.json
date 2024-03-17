@@ -1,0 +1,370 @@
+[
+    {
+        "name": {
+            "en": "Novotel Danang",
+            "vi": "Novotel Đà Nẵng"
+        },
+        "address": {
+            "en": "139-59-38, 10 Tran Quang Khai street, Tho Quang, Son Tra district, Da Nang city",
+            "vi": "139-59-38, 10 Trần Quang Khải, Thọ Quang, Sơn Trà, Đà Nẵng"
+        },
+        "price": {
+            "en": "20 USD",
+            "vi": "460,000 VND"
+        },
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/DaNang%2Fhotels%2Fnovotel-danang.jpg?alt=media&token=44aaedf3-7610-4e1d-a7b4-166e89470225",
+        "floors": []
+    },
+    {
+        "name": {
+            "en": "Radison Danang",
+            "vi": "Novotel Đà Nẵng"
+        },
+        "address": {
+            "en": "96 Phan Chu Trinh street, Hai Chau district, Da Nang city",
+            "vi": "96 Phan Chu Trinh, Quận Hải Châu, Đà Nẵng"
+        },
+        "price": {
+            "en": "21.4 USD",
+            "vi": "520,000 VND"
+        },
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/DaNang%2Fhotels%2Fradison-danang.jpg?alt=media&token=e1aa1c33-819c-44f6-96fe-4ebc3a2947fc",
+        "floors": []
+    },
+    {
+        "name": {
+            "en": "Tarasa Danang",
+            "vi": "Tarasa Đà Nẵng"
+        },
+        "address": {
+            "en": "109 Nguyen Chi Thanh street, Da Nang city.jpg",
+            "vi": "109 Nguyễn Chí Thanh, Đà Nẵng.jpg"
+        },
+        "price": {
+            "en": "20 USD",
+            "vi": "460,000 VND"
+        },
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/DaNang%2Fhotels%2Ftarasa-danang.jpg?alt=media&token=03d8b811-da16-4adf-b19c-b4df7cccbdce",
+        "floors": []
+    },
+    {
+        "name": {
+            "en": "The Royal Danang",
+            "vi": "The Royal Đà Nẵng"
+        },
+        "address": {
+            "en": "235 Ong Ich Duong, Cam Le district, Da Nang city",
+            "vi": "235 Ông Ích Đường, quận Cẩm Lệ, TP. Đà Nẵng"
+        },
+        "price": {
+            "en": "31.2 USD",
+            "vi": "740,000 VND"
+        },
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/DaNang%2Fhotels%2Fthe-royal-danang.jpeg?alt=media&token=69e99a79-51cc-4cba-a6f7-ebde33fb9738",
+        "floors": []
+    },
+    {
+        "name": {
+            "en": "Azerai La Residence",
+            "vi": "Azerai La Residence"
+        },
+        "address": {
+            "en": "64 Hai Thuong Lan Ong street, An Dong ward, Hue city",
+            "vi": "64 Hải Thượng Lãn Ông, phường An Đông, thành phố Huế"
+        },
+        "price": {
+            "en": "31.2 USD",
+            "vi": "740,000 VND"
+        },
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Hue%2Fhotels%2FAzerai%20La%20Residence.jpeg?alt=media&token=e5c7d2d0-cfef-4001-9db3-920b497c9f2f",
+        "floors": []
+    },
+    {
+        "name": {
+            "en": "Hue Riverside Villa",
+            "vi": "Hue Riverside Villa"
+        },
+        "address": {
+            "en": "97 To Huu street, Thuận An ward, Hue city",
+            "vi": "97 Tố Hữu, phường Thuận An, thành phố Huế"
+        },
+        "price": {
+            "en": "33.1 USD",
+            "vi": "800,000 VND"
+        },
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Hue%2Fhotels%2FHue%20Riverside%20Villa.jpeg?alt=media&token=4379f92a-318c-4e76-bd54-e2f4150da4f1",
+        "floors": []
+    },
+    {
+        "name": {
+            "en": "Vinpearl Hotel Huế",
+            "vi": "Vinpearl Hotel Huế"
+        },
+        "address": {
+            "en": "108 Nguyen Trai street, Vy Da ward, Hue city",
+            "vi": "108 Nguyễn Trãi, phường Vỹ Dạ, thành phố Huế"
+        },
+        "price": {
+            "en": "26.1 USD",
+            "vi": "600,000 VND"
+        },
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Hue%2Fhotels%2FVinpearl%20Hotel%20Hu%E1%BA%BF.jpeg?alt=media&token=4f5b3916-8869-48f5-ba1d-ade5dc7b787c",
+        "floors": []
+    },
+    {
+        "name": {
+            "en": "VuonHueXua hotel",
+            "vi": "VuonHueXua hotel"
+        },
+        "address": {
+            "en": "345 Nguyen Trai street, Vy Da ward, Hue city",
+            "vi": "345 Nguyễn Trãi, phường Vỹ Dạ, thành phố Huế"
+        },
+        "price": {
+            "en": "30.1 USD",
+            "vi": "780,000 VND"
+        },
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Hue%2Fhotels%2FVuonHueXua.jpg?alt=media&token=440c662c-0e8b-43f0-84f2-f56685b60a50",
+        "floors": []
+    },
+    {
+        "name": {
+            "en": "Kyoto-tokyu hotel",
+            "vi": "Kyoto-tokyu hotel"
+        },
+        "address": {
+            "en": "4-14-3 Kami-Hanzomon, Minato ward, Kyoto city",
+            "vi": "4-14-3 Kami-Hanzomon, phường Minato, thành phố Kyoto"
+        },
+        "price": {
+            "en": "25,2 USD",
+            "vi": "560,000 VND"
+        },
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Kyoto%2Fhotels%2FKyoto-tokyu.jpeg?alt=media&token=9f14668b-958d-48c3-8fe7-3ee4402f211f",
+        "floors": []
+    },
+    {
+        "name": {
+            "en": "Shijo Omiya hotel",
+            "vi": "Shijo Omiya hotel"
+        },
+        "address": {
+            "en": "5-28-3 Minami-Oshiage, Higashiyama ward, Kyoto city",
+            "vi": "5-28-3 Minami-Oshiage, phường Higashiyama, thành phố Kyoto"
+        },
+        "price": {
+            "en": "27.5 USD",
+            "vi": "600,000 VND"
+        },
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Kyoto%2Fhotels%2FShijo-Omiya-hotel.jpeg?alt=media&token=ba6b07fb-265e-4050-895a-56367c0270eb",
+        "floors": []
+    },
+    {
+        "name": {
+            "en": "Mitsui Garden hotel",
+            "vi": "Mitsui Garden hotel"
+        },
+        "address": {
+            "en": "3-5-3 Nishi-sugamo, Higashiyama ward, Kyoto city",
+            "vi": "3-5-3 Nishi-sugamo, phường Higashiyama, thành phố Kyoto"
+        },
+        "price": {
+            "en": "30.1 USD",
+            "vi": "780,000 VND"
+        },
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Kyoto%2Fhotels%2Fmitsui-garden-hotel.jpeg?alt=media&token=ebdd5d4f-b4fe-40a2-a3c6-8fab99e541a9",
+        "floors": []
+    },
+    {
+        "name": {
+            "en": "Baccarat Newyork hotel",
+            "vi": "Baccarat Newyork hotel"
+        },
+        "address": {
+            "en": "245 Abraham avenue, NewYork city",
+            "vi": "245 đại lộ Abraham, thành phố NewYork"
+        },
+        "price": {
+            "en": "13,85 USD",
+            "vi": "300,000 VND"
+        },
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/NewYork%2Fhotels%2FBaccarat-newyork.jpeg?alt=media&token=dadb609d-92db-4ddf-ab02-9e84aac436fb",
+        "floors": []
+    },
+    {
+        "name": {
+            "en": "Plaza hotel",
+            "vi": "Plaza hotel"
+        },
+        "address": {
+            "en": "608 Washington avenue, NewYork city",
+            "vi": "608 đại lộ Washington, thành phố NewYork"
+        },
+        "price": {
+            "en": "20 USD",
+            "vi": "460,000 VND"
+        },
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/NewYork%2Fhotels%2FPlaza-Hotel.jpeg?alt=media&token=e35358dc-bfaf-4eaf-b03a-400e686cce69",
+        "floors": []
+    },
+    {
+        "name": {
+            "en": "Stregis hotel",
+            "vi": "Stregis hotel"
+        },
+        "address": {
+            "en": "98 Washington avenue, NewYork city",
+            "vi": "98 đại lộ Washington, thành phố NewYork"
+        },
+        "price": {
+            "en": "10 USD",
+            "vi": "230,000 VND"
+        },
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/NewYork%2Fhotels%2FStregis.jpg?alt=media&token=5c8ad429-8827-44fd-9515-b895bd6b85b2",
+        "floors": []
+    },
+    {
+        "name": {
+            "en": "Hotel Le Milie Rose",
+            "vi": "Hotel Le Milie Rose"
+        },
+        "address": {
+            "en": "608 Elysee avenue, Paris city",
+            "vi": "608 đại lộ Elysee, thành phố Paris"
+        },
+        "price": {
+            "en": "5,2 USD",
+            "vi": "120,000 VND"
+        },
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Paris%2Fhotels%2FHotel%20Le%20Milie%20Rose.jpg?alt=media&token=662c6fae-4e41-432b-ae28-25436123018b",
+        "floors": []
+    },
+    {
+        "name": {
+            "en": "Hotel Lorette - Astotel",
+            "vi": "Hotel Lorette - Astotel"
+        },
+        "address": {
+            "en": "210 Charles de Gaule avenue, Paris city",
+            "vi": "210 đại lộ Charles de Gaule, thành phố Paris"
+        },
+        "price": {
+            "en": "10,3 USD",
+            "vi": "240,000 VND"
+        },
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Paris%2Fhotels%2FHotel%20Lorette%20-%20Astotel.jpg?alt=media&token=e7734733-1866-4df5-b109-5107ee03422f",
+        "floors": []
+    },
+    {
+        "name": {
+            "en": "Novotel Paris Les Halles",
+            "vi": "Novotel Paris Les Halles"
+        },
+        "address": {
+            "en": "77 Elysee avenue, Paris city",
+            "vi": "77 đại lộ Elysee, thành phố Paris"
+        },
+        "price": {
+            "en": "13.04 USD",
+            "vi": "300,000 VND"
+        },
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Paris%2Fhotels%2FNovotel%20Paris%20Les%20Halles.jpg?alt=media&token=a423b8a4-6fbc-4c7d-8fb8-5c4c613aa12d",
+        "floors": []
+    },
+    {
+        "name": {
+            "en": "Mgallery Sapa - Hôtel de la Coupole",
+            "vi": "Mgallery Sapa - Hôtel de la Coupole"
+        },
+        "address": {
+            "en": "43 Meo Vac, Sapa town",
+            "vi": "43 Mèo Vạc, thị trấn Sapa"
+        },
+        "price": {
+            "en": "20 USD",
+            "vi": "460,000 VND"
+        },
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Sapa%2Fhotels%2FMgallery%20Sapa%20-%20H%C3%B4tel%20de%20la%20Coupole.jpg?alt=media&token=bc13eae2-2936-41f0-9b75-14b37fdf2191",
+        "floors": []
+    },
+    {
+        "name": {
+            "en": "Victoria Sapa Resort and Spa",
+            "vi": "Victoria Sapa Resort and Spa"
+        },
+        "address": {
+            "en": "26 Fansipan, Sapa Town",
+            "vi": "26 Fansipan, Thị trấn Sapa"
+        },
+        "price": {
+            "en": "22,3 USD",
+            "vi": "500,000 VND"
+        },
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Sapa%2Fhotels%2FVictoria%20Sapa%20Resort%20and%20Spa.jpg?alt=media&token=a761b36b-7c90-421c-aec6-4a73d471d3ee",
+        "floors": []
+    },
+    {
+        "name": {
+            "en": "Mường Hoa hotel",
+            "vi": "Khách sạn Mường Hoa"
+        },
+        "address": {
+            "en": "98 Meo Vac, Sapa town",
+            "vi": "98 Mèo Vạc, thị trấn Sapa"
+        },
+        "price": {
+            "en": "7,82 USD",
+            "vi": "180,000 VND"
+        },
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Sapa%2Fhotels%2Fm%C6%B0%E1%BB%9Dng%20hoa%20.jpg?alt=media&token=f34e6128-8413-4a94-9887-3e92b77a99f4",
+        "floors": []
+    },
+    {
+        "name": {
+            "en": "Anda Venice Hotel",
+            "vi": "Anda Venice Hotel"
+        },
+        "address": {
+            "en": "119 Michelangelo street, Venice city",
+            "vi": "119 đường Michelangelo, thành phố Venice"
+        },
+        "price": {
+            "en": "22 USD",
+            "vi": "480,000 VND"
+        },
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Venice%2Fhotels%2FAnda-venice-hotel.jpeg?alt=media&token=c603a6c2-5094-4fe2-9f52-52606d028ba2",
+        "floors": []
+    },
+    {
+        "name": {
+            "en": "Hotel Mercurio Venice",
+            "vi": "Hotel Mercurio Venice"
+        },
+        "address": {
+            "en": "65 Rome street, Venice city",
+            "vi": "65 đường Rome, thành phố Venice"
+        },
+        "price": {
+            "en": "28.26 USD",
+            "vi": "650,000 VND"
+        },
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Venice%2Fhotels%2FHotel%20Mercurio%20Venice.jpeg?alt=media&token=5d13443f-fdc7-4eae-8fd3-bc0b51e9c77f",
+        "floors": []
+    },
+    {
+        "name": {
+            "en": "Rialto Unique Venice Experience",
+            "vi": "Rialto Unique Venice Experience"
+        },
+        "address": {
+            "en": "65 Vatican street, Venice city",
+            "vi": "65 đường Vatican, thành phố Venice"
+        },
+        "price": {
+            "en": "25.21 USD",
+            "vi": "580,000 VND"
+        },
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Venice%2Fhotels%2FRialto%20Unique%20Venice%20Experience.jpeg?alt=media&token=452585df-fcea-4044-ab71-19074478eedc",
+        "floors": []
+    }
+]

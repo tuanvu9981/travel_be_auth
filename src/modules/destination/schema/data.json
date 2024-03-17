@@ -12,7 +12,7 @@
             "en": "The most worth-living city in Vietnam",
             "vi": "thành phố đáng sống nhất Việt Nam"
         },
-        "imageUrl": "gs://travel-app-f9548.appspot.com/DaNang/da-nang.jpg",
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/DaNang%2Fda-nang.jpg?alt=media&token=c8436a9d-509d-4bd3-a62e-d68c472053bd",
         "activities": [],
         "hotels": []
     },
@@ -29,7 +29,7 @@
             "en": "An ancient city where used to be the capital of Vietnam",
             "vi": "Một thành phố cổ nơi từng là thủ đô của Việt Nam"
         },
-        "imageUrl": "gs://travel-app-f9548.appspot.com/Hue/hue.jpeg",
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Hue%2Fhue.jpeg?alt=media&token=7d98458a-f216-4080-900c-f3f4bc7199ce",
         "activities": [],
         "hotels": []
     },
@@ -46,7 +46,7 @@
             "en": "A beautiful city with many picturesque tourist attraction",
             "vi": "Một thành phố xinh đẹp với nhiều địa điểm du lịch đẹp như tranh vẽ"
         },
-        "imageUrl": "gs://travel-app-f9548.appspot.com/Kyoto/kyoto.jpg",
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Kyoto%2Fkyoto.jpg?alt=media&token=68c1ea77-59f3-4cad-9229-c216a6e18dd7",
         "activities": [],
         "hotels": []
     },
@@ -63,7 +63,7 @@
             "en": "The modern and developed city with convenient infrastructures",
             "vi": "Thành phố hiện đại và phát triển với cơ sở hạ tầng thuận tiện"
         },
-        "imageUrl": "gs://travel-app-f9548.appspot.com/NewYork/newyork.jpg",
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/NewYork%2Fnewyork.jpg?alt=media&token=a39ef316-332b-4d11-af21-80d9f3621180",
         "activities": [],
         "hotels": []
     },
@@ -80,7 +80,7 @@
             "en": "The romantic city inside Europe",
             "vi": "Thành phố lãng mạn trong lòng châu Âu"
         },
-        "imageUrl": "gs://travel-app-f9548.appspot.com/Paris/paris.jpg",
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Paris%2Fparis.jpg?alt=media&token=3a0c97e0-fed4-4025-aab8-e61f0dca0af3",
         "activities": [],
         "hotels": []
     },
@@ -97,7 +97,7 @@
             "en": "The peaceful and beautiful town located in northern Vietnam",
             "vi": "Thị trấn yên bình và xinh đẹp nằm ở miền Bắc Việt Nam"
         },
-        "imageUrl": "gs://travel-app-f9548.appspot.com/Sapa/sapa.jpg",
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Sapa%2Fsapa.jpg?alt=media&token=70486b00-7984-49ec-ade1-71760f55406d",
         "activities": [],
         "hotels": []
     },
@@ -114,7 +114,7 @@
             "en": "The ancient city with many Roman architecture",
             "vi": "Thành phố cổ với nhiều kiến ​​trúc La Mã"
         },
-        "imageUrl": "gs://travel-app-f9548.appspot.com/Venice/venice.jpg",
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Venice%2Fvenice.jpg?alt=media&token=873974f8-1a24-4faf-9324-6628a609e7b9",
         "activities": [],
         "hotels": []
     }

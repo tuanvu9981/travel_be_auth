@@ -2,7 +2,7 @@
     {
         "startDate": "2024-01-15",
         "endDate": "2024-02-20",
-        "imageUrl": "gs://travel-app-f9548.appspot.com/discount/discount1.jpeg",
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/discount%2Fdiscount1.jpeg?alt=media&token=fb584a45-f24a-4130-8208-a0a1f0a463ac",
         "title": {
             "en": "Big discount for Tet holiday",
             "vi": "Giảm giá lớn dịp Tết"
@@ -29,7 +29,7 @@
     {
         "startDate": "2024-01-15",
         "endDate": "2024-12-20",
-        "imageUrl": "gs://travel-app-f9548.appspot.com/discount/discount2.jpg",
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/discount%2Fdiscount2.jpg?alt=media&token=7e62e162-ceae-4364-b89b-4154cc33e36c",
         "title": {
             "en": "Big sale for Japan trips",
             "vi": "Khuyến mãi lớn cho chuyến đi Nhật Bản"
@@ -56,7 +56,7 @@
     {
         "startDate": "2024-02-15",
         "endDate": "2024-07-20",
-        "imageUrl": "gs://travel-app-f9548.appspot.com/discount/discount3.jpg",
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/discount%2Fdiscount3.jpg?alt=media&token=53cd98d1-eab2-49f4-bd6e-70250ccf798e",
         "title": {
             "en": "Special discount for China trips",
             "vi": "Giảm giá đặc biệt cho chuyến đi Trung Quốc"
@@ -83,7 +83,7 @@
     {
         "startDate": "2024-01-15",
         "endDate": "2024-02-20",
-        "imageUrl": "gs://travel-app-f9548.appspot.com/discount/discount4.jpg",
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/discount%2Fdiscount4.jpg?alt=media&token=e1ed51c1-d0b3-4c70-9f80-a27e8d051080",
         "title": {
             "en": "Big sale to welcome 15th birthday anniversary of our company",
             "vi": "Big sale chào mừng sinh nhật 15 năm thành lập công ty"
@@ -114,7 +114,7 @@
     {
         "startDate": "2024-01-15",
         "endDate": "2024-02-20",
-        "imageUrl": "gs://travel-app-f9548.appspot.com/discount/new-year.png",
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/discount%2Fnew-year.png?alt=media&token=0a6f3034-f19c-4220-a864-cf9063384024",
         "title": {
             "en": "Big sale for new year 2024",
             "vi": "Khuyến mãi lớn cho năm mới 2024"
@@ -141,7 +141,7 @@
     {
         "startDate": "2024-01-15",
         "endDate": "2024-02-20",
-        "imageUrl": "gs://travel-app-f9548.appspot.com/discount/travel-after-lockdown.jpg",
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/discount%2Ftravel-after-lockdown.jpg?alt=media&token=1801d9a7-aafd-4dad-a429-8cb24f251ff4",
         "title": {
             "en": "Travel after Covid-19 lockdown",
             "vi": "Du lịch sau thời kỳ phong tỏa hậu covid"
