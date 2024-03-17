@@ -1,0 +1,14 @@
+{
+  "name": "firebase-tools",
+  "version": "1.0.0",
+  "description": "manipulation with firebase",
+  "main": "index.ts",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^10.9.0"
+  }
+}
