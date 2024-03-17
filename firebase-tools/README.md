@@ -26,3 +26,17 @@ allow read, write: if true
 ```
 
 ```
+
+### 4. Change a fieldname (delete old field, add new field)
+```
+const updateDocumentFieldName = async () => {
+    const querySnapshot: QuerySnapshot = await getDocs(collectionRef);
+    querySnapshot.forEach(async (documentSnapshot: QueryDocumentSnapshot) => {
+        const documentRef = doc(db, collectionName, documentSnapshot.id)
+        await updateDoc(documentRef, {
+            businessTime: documentSnapshot.data().startTimes,
+            startTimes: deleteField(),
+        })
+    });
+}
+```

@@ -14,7 +14,7 @@
             "food_tour"
         ],
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/DaNang%2Factivities%2Fbana.jpg?alt=media&token=ef13ea3c-1b9b-4293-9efe-a9a9a402cb10",
-        "startTimes": "9:00 - 19:00",
+        "businessTime": "9:00 - 19:00",
         "rating": 4.5
     },
     {
@@ -31,7 +31,7 @@
             "culture_experience"
         ],
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/DaNang%2Factivities%2Fcau-rong.jpg?alt=media&token=18281113-d681-423f-aa61-18ac31463e73",
-        "startTimes": "3:00 - 23:00",
+        "businessTime": "3:00 - 23:00",
         "rating": 4.0
     },
     {
@@ -49,7 +49,7 @@
             "religious_place"
         ],
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/DaNang%2Factivities%2Fngu-hanh-son.jpg?alt=media&token=6054b0f6-d4ed-4e28-80a8-17428f1c7772",
-        "startTimes": "9:00 - 22:00",
+        "businessTime": "9:00 - 22:00",
         "rating": 4.5
     },
     {
@@ -66,7 +66,7 @@
             "culture_experience"
         ],
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Hue%2Factivities%2Fcahue.jpg?alt=media&token=63007847-62dd-4e8d-85da-f3b8dcef30ac",
-        "startTimes": "10:00 - 22:00",
+        "businessTime": "10:00 - 22:00",
         "rating": 4.2
     },
     {
@@ -83,7 +83,7 @@
             "culture_experience"
         ],
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Hue%2Factivities%2Fkinh-thanh.jpeg?alt=media&token=ccfccc0d-ca97-4a0f-b5d3-96e437b16454",
-        "startTimes": "9:00 - 17:30",
+        "businessTime": "9:00 - 17:30",
         "rating": 4.5
     },
     {
@@ -100,7 +100,7 @@
             "culture_experience"
         ],
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Hue%2Factivities%2Flang-minh-mang.jpg?alt=media&token=ed799933-4408-43da-bcdd-d78db290a536",
-        "startTimes": "9:00 - 17:30",
+        "businessTime": "9:00 - 17:30",
         "rating": 4.5
     },
     {
@@ -118,7 +118,7 @@
             "religious_place"
         ],
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Kyoto%2Factivities%2FKinkakuji.jpg?alt=media&token=e5718191-5498-4bbc-a88e-37937aad14bd",
-        "startTimes": "9:00 - 17:00",
+        "businessTime": "9:00 - 17:00",
         "rating": 4.6
     },
     {
@@ -136,7 +136,7 @@
             "local_market"
         ],
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Kyoto%2Factivities%2FNishiki-market.jpg?alt=media&token=13e1afbf-59eb-4a3d-90dc-a1c03ec7ebad",
-        "startTimes": "9:00 - 19:00",
+        "businessTime": "9:00 - 19:00",
         "rating": 3.8
     },
     {
@@ -154,7 +154,7 @@
             "religious_place"
         ],
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Kyoto%2Factivities%2FToudaiji.jpg?alt=media&token=cdc78324-5684-4779-8f8a-132d7affecc2",
-        "startTimes": "9:00 - 16:30",
+        "businessTime": "9:00 - 16:30",
         "rating": 4.5
     },
     {
@@ -172,7 +172,7 @@
             "religious_place"
         ],
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Kyoto%2Factivities%2Fkiyomizu.jpg?alt=media&token=95b92a44-e183-4038-81a9-45d33aa07d72",
-        "startTimes": "8:00 - 16:30",
+        "businessTime": "8:00 - 16:30",
         "rating": 4.7
     },
     {
@@ -189,7 +189,7 @@
             "culture_experience"
         ],
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/NewYork%2Factivities%2Fc%E1%BA%A7u-brooklyn.jpg?alt=media&token=8db76ea7-d3e8-4091-adb6-3311badf7046",
-        "startTimes": "9:00 - 19:00",
+        "businessTime": "9:00 - 19:00",
         "rating": 4.0
     },
     {
@@ -205,7 +205,7 @@
             "sigh_seeing"
         ],
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/NewYork%2Factivities%2Fnew-york-city-central.jpg?alt=media&token=3832dd13-e75e-4066-a874-fad045154993",
-        "startTimes": "7:00 - 22:00",
+        "businessTime": "7:00 - 22:00",
         "rating": 4.2
     },
     {
@@ -222,7 +222,7 @@
             "sigh_seeing"
         ],
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/NewYork%2Factivities%2Ftru-so-lien-hop-quoc.jpg?alt=media&token=18574124-e05c-4871-bc94-be6b43eee96c",
-        "startTimes": "9:00 - 18:30",
+        "businessTime": "9:00 - 18:30",
         "rating": 4.1
     },
     {
@@ -239,7 +239,7 @@
             "sigh_seeing"
         ],
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/NewYork%2Factivities%2Ftuong-nu-than-tu-do-vietmytravel.jpg?alt=media&token=3e033f85-7b55-4ab4-b6eb-009363a14b61",
-        "startTimes": "9:00 - 20:00",
+        "businessTime": "9:00 - 20:00",
         "rating": 4.7
     },
     {
@@ -257,7 +257,7 @@
             "religious_place"
         ],
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Paris%2Factivities%2FArc_de_Triomphe-khai_hoan_mon.jpg?alt=media&token=ff82e9d2-936b-4710-930c-8b5889a46ebc",
-        "startTimes": "9:00 - 23:30",
+        "businessTime": "9:00 - 23:30",
         "rating": 3.4
     },
     {
@@ -274,7 +274,7 @@
             "sigh_seeing"
         ],
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Paris%2Factivities%2FEffiel.jpeg?alt=media&token=2785d9ac-cb68-414c-be91-daec3e4105a7",
-        "startTimes": "9:00 - 21:00",
+        "businessTime": "9:00 - 21:00",
         "rating": 3.2
     },
     {
@@ -292,7 +292,7 @@
             "culture_experience"
         ],
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Paris%2Factivities%2Fnha-tho-duc-ba.jpeg?alt=media&token=c8740063-b959-4b9a-a59b-d7c49827da9a",
-        "startTimes": "9:00 - 19:00",
+        "businessTime": "9:00 - 19:00",
         "rating": 4.0
     },
     {
@@ -310,7 +310,7 @@
             "food_tour"
         ],
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Sapa%2Factivities%2Fb%E1%BA%A3n-c%C3%A1t-c%C3%A1t.jpg?alt=media&token=668975ec-3b4e-49a8-b345-6d16e0dec12d",
-        "startTimes": "4:00 - 22:30",
+        "businessTime": "4:00 - 22:30",
         "rating": 4.5
     },
     {
@@ -329,7 +329,7 @@
             "food_tour"
         ],
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Sapa%2Factivities%2Fch%E1%BB%A3%20phi%C3%AAn.jpg?alt=media&token=404ce3d3-f8c6-426e-8021-905bca8c3cd0",
-        "startTimes": "9:00 - 19:00",
+        "businessTime": "9:00 - 19:00",
         "rating": 4.5
     },
     {
@@ -345,7 +345,7 @@
             "sigh_seeing"
         ],
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Sapa%2Factivities%2Fphanxipang.jpg?alt=media&token=df1df07c-637c-4a9d-9b79-9f6cef5da5fe",
-        "startTimes": "9:00 - 19:00",
+        "businessTime": "9:00 - 19:00",
         "rating": 4.5
     },
     {
@@ -363,7 +363,7 @@
             "food_tour"
         ],
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Sapa%2Factivities%2Fthung-l%C5%A9ng-m%C6%B0%E1%BB%9Dng-hoa.jpg?alt=media&token=d4aaa3ff-5899-48bb-8405-bbd3283199ac",
-        "startTimes": "9:00 - 23:00",
+        "businessTime": "9:00 - 23:00",
         "rating": 4.25
     },
     {
@@ -380,7 +380,7 @@
             "sigh_seeing"
         ],
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Venice%2Factivities%2Fgondola.jpg?alt=media&token=da196811-7e8f-42cc-b51a-43351a9e258d",
-        "startTimes": "9:00 - 20:30",
+        "businessTime": "9:00 - 20:30",
         "rating": 3.87
     },
     {
@@ -397,7 +397,7 @@
             "sigh_seeing"
         ],
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Venice%2Factivities%2Fmurano.jpg?alt=media&token=f1b3ca37-58ff-4fdd-aeaf-77b57a9b545e",
-        "startTimes": "9:00 - 20:00",
+        "businessTime": "9:00 - 20:00",
         "rating": 4.5
     },
     {
@@ -415,7 +415,7 @@
             "sigh_seeing"
         ],
         "imageUrl": "https://firebasestorage.googleapis.com/v0/b/travel-app-f9548.appspot.com/o/Venice%2Factivities%2Fstmarksbasilica.jpg?alt=media&token=cd1a581a-2678-4d23-8f53-125729420316",
-        "startTimes": "9:00 - 22:30",
+        "businessTime": "9:00 - 22:30",
         "rating": 4.7
     }
 ]
