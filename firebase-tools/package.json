@@ -4,11 +4,17 @@
   "description": "manipulation with firebase",
   "main": "index.ts",
   "scripts": {
-    "test": "npm run test"
+    "execute": "./node_modules/.bin/ts-node-esm index.ts",
+    "test": "./node_modules/.bin/ts-node-esm config.ts"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "firebase": "^10.9.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.2"
   }
 }
